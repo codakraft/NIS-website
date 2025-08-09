@@ -1,0 +1,128 @@
+.statistics {
+  background-color: var(--text-white);
+  padding: var(--spacing-xxl) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.statisticsContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  align-items: center;
+}
+
+.statisticsLeft {
+  max-width: 500px;
+}
+
+.statisticsTitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.2;
+}
+
+.statisticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.statisticItem {
+  text-align: center;
+}
+
+.statisticNumber {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: var(--spacing-xs);
+  color: var(--accent-red);
+}
+
+.statisticLabel {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statisticsRight {
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.libraryImage {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover .libraryImage {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .statisticsContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .statisticsTitle {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .statisticsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .statisticNumber {
+    font-size: 3rem;
+  }
+  
+  .statisticLabel {
+    font-size: 0.9rem;
+  }
+  
+  .libraryImage {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statisticsTitle {
+    font-size: 1.8rem;
+  }
+  
+  .statisticsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  .statisticNumber {
+    font-size: 2.5rem;
+  }
+  
+  .statisticLabel {
+    font-size: 0.8rem;
+  }
+}

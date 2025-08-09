@@ -1,33 +1,186 @@
-# Getting Started with Create React App
+# Norwegian International School Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive landing page for the Norwegian International School built with React, TypeScript, and CSS Modules.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Fully Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
+- **TypeScript Support** - Strongly typed components with proper interfaces
+- **CSS Modules** - Component-scoped styling without external dependencies
+- **Modern UI Components** - Clean, professional design with smooth animations
+- **Semantic HTML** - Accessibility-focused markup
+- **Customizable Content** - Easy to modify through centralized data files
 
-### `npm start`
+## Component Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+src/
+├── components/
+│   ├── NorwegianSchoolLandingPage.tsx     # Main landing page component
+│   ├── Header/
+│   │   ├── Header.tsx                      # Navigation header
+│   │   └── Header.module.css
+│   ├── Hero/
+│   │   ├── Hero.tsx                        # Hero section with pagination
+│   │   └── Hero.module.css
+│   ├── About/
+│   │   ├── About.tsx                       # About section
+│   │   └── About.module.css
+│   ├── Statistics/
+│   │   ├── Statistics.tsx                  # Statistics display
+│   │   └── Statistics.module.css
+│   ├── Testimonials/
+│   │   ├── Testimonials.tsx                # Testimonials section
+│   │   └── Testimonials.module.css
+│   ├── CategoryGrid/
+│   │   ├── CategoryGrid.tsx                # Category grid layout
+│   │   └── CategoryGrid.module.css
+│   └── Footer/
+│       ├── Footer.tsx                      # Site footer
+│       └── Footer.module.css
+├── data/
+│   └── siteData.ts                         # Centralized data configuration
+├── types/
+│   └── index.ts                            # TypeScript interfaces
+└── styles/
+    └── globals.css                         # Global styles and CSS variables
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Design System
 
-### `npm test`
+### Color Palette
+- **Primary Blue**: #3B4A9C
+- **Accent Red**: #D32F2F
+- **Accent Orange**: #FF9800
+- **White**: #FFFFFF
+- **Light Background**: #F5F5F5
+- **Dark Overlay**: rgba(0,0,0,0.4)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Typography
+- **Font Family**: Arial, Helvetica, sans-serif
+- **Responsive Font Sizes**: Automatically adjusts for different screen sizes
+- **Text Hierarchy**: Proper heading structure for accessibility
 
-### `npm run build`
+### Spacing
+- Uses CSS custom properties for consistent spacing
+- Responsive spacing that adapts to screen size
+- Grid and flexbox layouts for modern responsive design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Adding Images
+
+The website expects images in the `public/images/` directory:
+
+- **hero-bg.jpg** - Hero background (1920x1080px)
+- **classroom.jpg** - Classroom scene (400x300px)
+- **teaching.jpg** - Teaching scene (400x300px)
+- **library.jpg** - Library scene (400x350px)
+- **academics.jpg** - Academic activities (600x400px)
+- **culture.jpg** - Cultural activities (600x400px)
+- **culture2.jpg** - Cultural activities variation (600x400px)
+- **campus.jpg** - Campus exterior (600x400px)
+- **campus2.jpg** - Campus facilities (600x400px)
+- **community.jpg** - Community activities (600x400px)
+
+## Customization
+
+### Content Updates
+
+Edit the `src/data/siteData.ts` file to update:
+- Navigation items
+- Statistics
+- Testimonials
+- Category cards
+- Footer content
+- Contact information
+
+### Styling Updates
+
+Each component has its own CSS module file for isolated styling:
+- Global styles: `src/styles/globals.css`
+- Component styles: `src/components/[ComponentName]/[ComponentName].module.css`
+
+### TypeScript Interfaces
+
+All data structures are typed in `src/types/index.ts`:
+- `NavigationItem` - Navigation menu items
+- `Statistic` - Statistical data display
+- `Testimonial` - User testimonials
+- `CategoryCard` - Category grid items
+- `FooterSection` - Footer sections
+- `SocialMediaLink` - Social media links
+
+## Responsive Breakpoints
+
+- **Mobile**: Up to 768px
+- **Tablet**: 769px to 1024px
+- **Desktop**: 1025px and above
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Performance Features
+
+- CSS-only animations and transitions
+- Optimized image loading
+- Minimal bundle size (no external UI libraries)
+- Semantic HTML for SEO optimization
+
+## Accessibility Features
+
+- Proper heading hierarchy
+- Alt text for images
+- ARIA labels for interactive elements
+- Keyboard navigation support
+- Focus indicators
+- Color contrast compliance
+
+## Development Scripts
+
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm test` - Run tests
+- `npm run eject` - Eject from Create React App
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is proprietary software for the Norwegian International School.
+
+---
+
+Built with ❤️ using React, TypeScript, and CSS Modules
 
 ### `npm run eject`
 

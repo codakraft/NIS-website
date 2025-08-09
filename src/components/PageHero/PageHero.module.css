@@ -1,0 +1,280 @@
+/* Page Hero Component Styles */
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroBackground {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  z-index: 1 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #f5f5f5; /* Fallback background color */
+}
+
+/* Hero Header */
+.heroHeader {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+/* Hamburger Menu */
+.hamburgerMenu {
+  background: rgb(43, 49, 133);
+  height: 69px;
+  width: 76px;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburgerMenu:hover {
+  background: rgba(95, 102, 178, 1);
+  transform: translateY(-1px);
+}
+
+.hamburgerLine {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Logo */
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.actionButton {
+  background: rgba(220, 104, 104, 0.85);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 150px;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(220, 104, 104, 0.2);
+}
+
+.actionButton:hover {
+  background: rgba(220, 104, 104, 1);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(220, 104, 104, 0.3);
+}
+
+/* Hero Content - Purple overlay section */
+.heroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 0;
+}
+
+.heroTextBox {
+  background: linear-gradient(135deg, #3B4A9C 0%, #2E3C7E 100%);
+  color: white;
+  width: 610px;
+  height: 212px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.sectionLabel {
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.heroTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 44px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  color: white;
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  
+  .heroTextBox {
+    padding: 30px 40px;
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  
+  .heroTextBox {
+    padding: 25px 30px;
+    max-width: 70%;
+    min-height: 150px;
+  }
+  
+  .heroHeader {
+    padding: 15px 20px;
+  }
+  
+  .hamburgerMenu {
+    width: 55px;
+    height: 50px;
+    padding: 12px;
+  }
+  
+  .hamburgerLine {
+    width: 30px;
+    height: 3px;
+  }
+  
+  .rightSection {
+    gap: 12px;
+  }
+  
+  .actionButtons {
+    gap: 6px;
+  }
+  
+  .actionButton {
+    padding: 8px 16px;
+    font-size: 11px;
+    width: 100px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+  
+  .sectionLabel {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+  
+  .heroTextBox {
+    padding: 15px 20px;
+    max-width: 85%;
+    min-height: 100px;
+    width: 400px;
+    height: 140px;
+  }
+  
+  .heroHeader {
+    padding: 10px 15px;
+  }
+  
+  .hamburgerMenu {
+    width: 45px;
+    height: 40px;
+    padding: 8px;
+  }
+  
+  .hamburgerLine {
+    width: 25px;
+    height: 2px;
+  }
+  
+  .rightSection {
+    gap: 8px;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .actionButtons {
+    gap: 4px;
+  }
+  
+  .actionButton {
+    padding: 6px 12px;
+    font-size: 10px;
+    width: 70px;
+  }
+  
+  .actionButton img {
+    width: 14px;
+    height: 14px;
+  }
+}

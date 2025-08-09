@@ -1,0 +1,125 @@
+/* Experience Card Component Styles */
+.experienceCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+.experienceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.experienceCard:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experienceCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  padding: 32px 24px 24px;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardSubtitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cardImageContainer {
+    height: 240px;
+  }
+  
+  .cardTitle {
+    font-size: 24px;
+  }
+  
+  .cardSubtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardImageContainer {
+    height: 200px;
+  }
+  
+  .cardOverlay {
+    padding: 24px 20px 20px;
+  }
+  
+  .cardTitle {
+    font-size: 20px;
+  }
+  
+  .cardSubtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardImageContainer {
+    height: 180px;
+  }
+  
+  .cardOverlay {
+    padding: 20px 16px 16px;
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+  }
+  
+  .cardSubtitle {
+    font-size: 12px;
+  }
+}

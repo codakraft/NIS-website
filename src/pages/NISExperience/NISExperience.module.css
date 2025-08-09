@@ -1,0 +1,1693 @@
+/* Admission Page Styles */
+.nisExperiencePage {
+  font-family: 'Effra', sans-serif;
+  line-height: 1.6;
+  /* background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%); */
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.bodyContent {
+  background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%);
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.introTextBox {
+  width: 1152px;
+  height: 204px;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.introText {
+  font-family: 'Effra', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 20px;
+  line-height: 1.5;
+  color: #333333;
+  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+  width: 90%;
+}
+
+/* Custom About Hero Section */
+.aboutHeroSection {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutHeroBackground {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  background-image: url('../../assets/icons/aboutUsHero.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* About Header */
+.aboutHeader {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+/* Hamburger Menu */
+.hamburgerMenu {
+  background: rgb(43, 49, 133);
+  height: 69px;
+  width: 76px;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburgerMenu:hover {
+  background: rgba(95, 102, 178, 1);
+  transform: translateY(-1px);
+}
+
+.hamburgerLine {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Logo */
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.actionButton {
+  background: rgba(220, 104, 104, 0.85);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 150px;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(220, 104, 104, 0.2);
+}
+
+.actionButton:hover {
+  background: rgba(220, 104, 104, 1);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(220, 104, 104, 0.3);
+}
+
+/* About Hero Content - Purple overlay section */
+.aboutHeroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.aboutHeroTextBox {
+  background: linear-gradient(135deg, #3B4A9C 0%, #2E3C7E 100%);
+  padding: 40px 60px;
+  color: white;
+  max-width: 50%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.aboutHeroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  color: white;
+}
+
+/* Responsive Design for About Hero */
+@media (max-width: 1024px) {
+  .aboutHeroTitle {
+    font-size: 2.8rem;
+  }
+  
+  .aboutHeroTextBox {
+    padding: 30px 40px;
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHeroTitle {
+    font-size: 2.2rem;
+  }
+  
+  .aboutHeroTextBox {
+    padding: 25px 30px;
+    max-width: 70%;
+    min-height: 150px;
+  }
+  
+  .aboutHeader {
+    padding: 15px 20px;
+  }
+  
+  .rightSection {
+    gap: 15px;
+  }
+  
+  .actionButtons {
+    gap: 8px;
+  }
+  
+  .actionButton {
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 120px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .bodyContent {
+    padding: 20px 16px;
+  }
+  
+  .introTextBox {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    padding: 16px;
+  }
+  
+  .introText {
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .campusExploreContainer {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 20px;
+  }
+  
+  .campusImageColumn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .campusTextColumn {
+    flex: none;
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .campusTitle {
+    font-size: 2.5rem;
+  }
+  
+  .campusDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutHeroTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionLabel {
+    font-size: 0.8rem;
+  }
+  
+  .aboutHeroTextBox {
+    padding: 20px 25px;
+    max-width: 80%;
+    min-height: 120px;
+  }
+  
+  .hamburgerMenu {
+    width: 60px;
+    height: 55px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .actionButton {
+    padding: 8px 16px;
+    font-size: 11px;
+    width: 100px;
+  }
+  
+  .bodyContent {
+    padding: 16px 12px;
+  }
+  
+  .introTextBox {
+    padding: 12px;
+    min-height: 160px;
+  }
+  
+  .introText {
+    font-size: 14px;
+  }
+  
+  .campusExploreContainer {
+    padding: 0 16px;
+    gap: 1.5rem;
+  }
+  
+  .campusTitle {
+    font-size: 2rem;
+  }
+  
+  .campusDescription {
+    font-size: 0.9rem;
+  }
+  
+  .campusLabel {
+    font-size: 0.8rem;
+  }
+}
+
+/* Welcome Section */
+.welcomeSection {
+  background: transparent;
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+.welcomeContent {
+  display: flex;
+  align-items: flex-start;
+  min-height: 600px;
+}
+
+.welcomeImage {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.welcomeImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  max-width: 508px;
+}
+
+.welcomeText {
+  width: 50%;
+  font-family: 'Effra', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333333;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcomeText p {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.welcomeText p:last-child {
+  margin-bottom: 0;
+}
+
+/* Student Welcome Section */
+.studentWelcomeSection {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.studentWelcomeContent {
+  display: flex;
+  align-items: stretch;
+  min-height: 600px;
+  position: relative;
+}
+
+.studentImageContainer {
+  width: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.studentImage {
+  width: 508px;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+}
+
+.studentTextContainer {
+  width: 50%;
+  background-color: #b4e5fe;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Blue background that extends beyond container to the right */
+.studentWelcomeSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100vw;
+  height: 100%;
+  background-color: #b4e5fe;
+  z-index: 0;
+}
+
+.quotationMarks {
+  font-family: 'Effra', sans-serif;
+  font-size: 80px;
+  color: #4a90e2;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.studentTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 30px 0;
+  line-height: 1.2;
+}
+
+.studentDescription {
+  font-family: 'Effra', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #34495e;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.glasses {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Vision & Mission Section */
+.visionMissionSection {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/aboutNISAssembly.png?alt=media&token=b62a308e-69b5-43a7-9883-b0179cdaeca8');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  margin-bottom: 50px;
+}
+
+/* Dark overlay for better text readability */
+.visionMissionSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.visionMissionContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  justify-content: flex-end;
+}
+
+.visionMissionHeader {
+  background-color: #DC2626;
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  width: 650px;
+  height: 182px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.sectionLabel {
+  font-family: 'Effra', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin: 0 0 16px 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.visionMissionTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  line-height: 1.2;
+}
+
+.visionMissionContent {
+  background-color: #1E3A8A;
+  width: 1152px;
+  height: 216px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  position: relative;
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Vertical divider line between Vision and Mission */
+.visionMissionContent::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.visionCard,
+.missionCard {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.cardIcon {
+  display: inline-flex;
+  margin-right: 16px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.cardIcon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.visionCard h3,
+.missionCard h3 {
+  font-family: 'Effra', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.visionCard p,
+.missionCard p {
+  font-family: 'Effra', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
+}
+
+/* NIS Experience Section */
+.nisExperienceSection {
+  /* background-color: #e8f4f8; */
+  padding: 4rem 0;
+}
+
+.nisExperienceHeader {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.nisExperienceTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3B4A9C;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.experienceCard {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  height: 200px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cardContent p {
+  font-size: 0.9rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* Overlay effects for experience cards */
+.experienceCard:nth-child(1) .cardContent {
+  background: linear-gradient(45deg, rgba(59, 74, 156, 0.9), rgba(59, 74, 156, 0.7));
+}
+
+.experienceCard:nth-child(2) .cardContent {
+  background: linear-gradient(45deg, rgba(211, 47, 47, 0.9), rgba(211, 47, 47, 0.7));
+}
+
+.experienceCard:nth-child(3) .cardContent {
+  background: linear-gradient(45deg, rgba(59, 74, 156, 0.9), rgba(59, 74, 156, 0.7));
+}
+
+.experienceCard:nth-child(4) .cardContent {
+  background: linear-gradient(45deg, rgba(211, 47, 47, 0.9), rgba(211, 47, 47, 0.7));
+}
+
+/* Campus Explore Section */
+.campusExploreSection {
+  /* padding: 5rem 0; */
+  background-color: transparent;
+}
+
+.campusExploreContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 0 40px; */
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.campusImageColumn {
+  flex: 0 0 60%;
+}
+
+.campusImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.campusTextColumn {
+  flex: 0 0 40%;
+  padding-left: 2rem;
+}
+
+.campusLabel {
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #2D338A;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.campusTitle {
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  color: #2D338A;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.campusDescription {
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #2D338A;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.takeATourButton {
+  font-family: 'Effra', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #C02026;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.takeATourButton:hover {
+  color: #C53030;
+  transform: translateX(5px);
+}
+
+.tourArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.takeATourButton:hover .tourArrow {
+  transform: translateX(5px);
+}
+
+/* Up Next Section */
+.upNextSection {
+  background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%);
+  background-attachment: fixed;
+  padding: 30px 0;
+  position: relative;
+}
+
+.upNextSection .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.upNextSection .sectionLabel {
+  font-family: 'Effra', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin: 0 0 24px 0;
+  color: #6b7280;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.upNextGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.upNextCard {
+  background-color: white;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.upNextCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.upNextCard.featured {
+  background: linear-gradient(135deg, #3B4A9C 0%, #1E3A8A 100%);
+  color: white;
+  transform: scale(1.05);
+}
+
+.upNextCard.featured:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.upNextCard h3 {
+  font-family: 'Effra', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: inherit;
+  line-height: 1.3;
+}
+
+.upNextCard p {
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.upNextCard.featured p {
+  opacity: 0.95;
+}
+
+/* Up Next Section Responsive */
+@media (max-width: 1024px) {
+  .upNextSection {
+    padding: 25px 0;
+  }
+  
+  .upNextSection .container {
+    padding: 0 32px;
+  }
+  
+  .upNextGrid {
+    gap: 24px;
+  }
+  
+  .upNextCard {
+    padding: 32px 24px;
+  }
+  
+  .upNextCard h3 {
+    font-size: 20px;
+  }
+  
+  .upNextCard p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .upNextSection {
+    padding: 20px 0;
+  }
+  
+  .upNextSection .container {
+    padding: 0 20px;
+  }
+  
+  .upNextGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .upNextCard.featured {
+    transform: none;
+  }
+  
+  .upNextCard.featured:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .upNextSection {
+    padding: 15px 0;
+  }
+  
+  .upNextSection .container {
+    padding: 0 16px;
+  }
+  
+  .upNextCard {
+    padding: 24px 20px;
+  }
+  
+  .upNextCard h3 {
+    font-size: 18px;
+  }
+  
+  .upNextCard p {
+    font-size: 13px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #3B4A9C;
+  color: white;
+  padding: 3rem 0 2rem;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footerSection h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footerSection p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialIcons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0.5rem;
+}
+
+.socialIcons button:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .welcomeContent {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .studentWelcomeContent {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .studentImageContainer {
+    width: 100%;
+    padding: 40px 0;
+  }
+  
+  .studentImage {
+    width: 400px;
+    height: 425px;
+  }
+  
+  .studentTextContainer {
+    width: 100%;
+    position: relative;
+    padding: 60px 40px;
+  }
+  
+  .studentWelcomeSection::before {
+    width: 100%;
+  }
+  
+  .studentTitle {
+    font-size: 36px;
+  }
+  
+  .studentDescription {
+    font-size: 18px;
+  }
+  
+  .visionMissionContainer {
+    margin: 0 20px;
+  }
+  
+  .visionMissionHeader {
+    padding: 40px 30px;
+  }
+  
+  .visionMissionTitle {
+    font-size: 36px;
+  }
+  
+  .visionMissionContent {
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 30px;
+  }
+  
+  .visionMissionContent::before {
+    display: none;
+  }
+  
+  .visionCard,
+  .missionCard {
+    padding: 0 20px;
+  }
+  
+  .visionCard h3,
+  .missionCard h3 {
+    font-size: 28px;
+  }
+  
+  .visionCard p,
+  .missionCard p {
+    font-size: 16px;
+  }
+  
+  .visionMissionContainer {
+    margin: 0 15px;
+  }
+  
+  .visionMissionHeader {
+    padding: 30px 20px;
+  }
+  
+  .visionMissionTitle {
+    font-size: 28px;
+  }
+  
+  .sectionLabel {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  
+  .visionMissionContent {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+  
+  .cardIcon svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .visionCard h3,
+  .missionCard h3 {
+    font-size: 24px;
+  }
+  
+  .visionCard p,
+  .missionCard p {
+    font-size: 16px;
+  }
+  
+  .experienceGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .upNextGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .studentWelcomeContent {
+    min-height: auto;
+  }
+  
+  .studentImageContainer {
+    padding: 30px 0;
+  }
+  
+  .studentImage {
+    width: 300px;
+    height: 320px;
+  }
+  
+  .studentTextContainer {
+    padding: 40px 30px;
+  }
+  
+  .quotationMarks {
+    font-size: 60px;
+  }
+  
+  .studentTitle {
+    font-size: 28px;
+  }
+  
+  .studentDescription {
+    font-size: 16px;
+  }
+  
+  .visionMissionTitle,
+  .nisExperienceTitle {
+    font-size: 2rem;
+  }
+  
+  .footerContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* NIS Experience Section Styles */
+.nisExperienceSection {
+  padding: 60px 0;
+  /* background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%); */
+  background-attachment: fixed;
+  position: relative;
+}
+
+.nisExperienceContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.nisExperienceHeader {
+  /* position: sticky; */
+  top: 120px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.nisExperienceLabel {
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  /* letter-spacing: 3px; */
+  margin: 0 0 24px 0;
+  color: #2D338A;
+}
+
+.nisExperienceSubText {
+  width: 70%;
+  margin-top: 40px;
+}
+
+.nisExperienceTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 44px;
+  font-weight: 400;
+  margin: 0;
+  color: #2D338A;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.experienceCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.experienceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experienceCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  padding: 32px 24px 24px;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardTitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+  line-height: 1.2;
+}
+
+.cardSubtitle {
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nisExperienceContainer {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 32px;
+  }
+  
+  .nisExperienceHeader {
+    position: static;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nisExperienceTitle {
+    font-size: 48px;
+  }
+  
+  .experienceGrid {
+    gap: 20px;
+  }
+  
+  .cardImageContainer {
+    height: 240px;
+  }
+  
+  .cardTitle {
+    font-size: 24px;
+  }
+  
+  .cardSubtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nisExperienceSection {
+    padding: 80px 0;
+  }
+  
+  .nisExperienceContainer {
+    padding: 0 20px;
+    gap: 40px;
+  }
+  
+  .nisExperienceTitle {
+    font-size: 36px;
+  }
+  
+  .experienceGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .cardImageContainer {
+    height: 200px;
+  }
+  
+  .cardOverlay {
+    padding: 24px 20px 20px;
+  }
+  
+  .cardTitle {
+    font-size: 20px;
+  }
+  
+  .cardSubtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nisExperienceSection {
+    padding: 60px 0;
+  }
+  
+  .nisExperienceContainer {
+    padding: 0 16px;
+  }
+  
+  .nisExperienceTitle {
+    font-size: 28px;
+  }
+  
+  .cardImageContainer {
+    height: 180px;
+  }
+  
+  .cardOverlay {
+    padding: 20px 16px 16px;
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+  }
+  
+  .cardSubtitle {
+    font-size: 12px;
+  }
+}
+
+/* Admission Content Section */
+.admissionContent {
+  padding: 20px 0;
+  background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%);
+  background-attachment: fixed;
+  position: relative;
+  z-index: 5;
+  margin-top: 50px;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.admissionImage {
+  width: 464px;
+  height: 412px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.textSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.textContent {
+  width: 720px;
+  text-align: justify;
+  font-family: 'Effra', Arial, sans-serif;
+}
+
+.mainText {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Effra', Arial, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Effra', Arial, sans-serif;
+  color: #5a6c7d;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.callToAction {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Effra', Arial, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.contact {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Effra', Arial, sans-serif;
+  color: #5a6c7d;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.joinLink {
+  color: #dc6868;
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Effra', Arial, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.joinLink:hover {
+  color: #c55a5a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  
+  .admissionImage {
+    width: 100%;
+    max-width: 464px;
+    height: auto;
+  }
+  
+  .textContent {
+    width: 100%;
+    max-width: 628px;
+  }
+  
+  .admissionContent {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .textContent {
+    padding: 0 16px;
+  }
+  
+  .mainText,
+  .description,
+  .callToAction,
+  .contact,
+  .joinLink {
+    font-size: 16px;
+  }
+}
+
+/* Admission Policy Section */
+.admissionPolicySection {
+  background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%);
+  background-attachment: fixed;
+  padding: 60px 0;
+  position: relative;
+}
+
+.admissionPolicyContainer {
+  /* width: 1152px; */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 0px 0 40px;
+  display: flex;
+  align-items: center;
+  height: 225px;
+  background-color: #2D338A;
+  border-radius: 0;
+}
+
+.policyTextSection {
+  flex: 1;
+  padding: 90px 40px;
+  color: white;
+  width: 100%;
+}
+
+.policyTitle {
+  font-family: 'Effra', Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.policyDescription {
+  font-family: 'Effra', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  /* margin: 0 0 32px 0; */
+  max-width: 400px;
+}
+
+.viewPolicyButton {
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Effra', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.policyImageSection {
+  flex: 1;
+  height: 225px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.policyImage {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+/* Responsive Design for Admission Policy */
+@media (max-width: 768px) {
+  .admissionPolicyContainer {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .policyTextSection {
+    padding: 60px 40px;
+    text-align: center;
+  }
+  
+  .policyTitle {
+    font-size: 36px;
+  }
+  
+  .policyDescription {
+    font-size: 16px;
+    max-width: none;
+  }
+  
+  .policyImageSection {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .policyTextSection {
+    padding: 40px 20px;
+  }
+  
+  .policyTitle {
+    font-size: 28px;
+  }
+  
+  .policyDescription {
+    font-size: 14px;
+  }
+  
+  .viewPolicyButton {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  
+  .policyImageSection {
+    height: 250px;
+  }
+}
