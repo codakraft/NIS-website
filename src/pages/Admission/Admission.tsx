@@ -33,7 +33,7 @@ const Admission: React.FC = () => {
   useEffect(() => {
     // Firebase image URL for hero background
     const firebaseImageUrl =
-      "https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Photo%20(5).png?alt=media&token=c29c2550-264d-423c-a73b-d9bc73cae02c";
+      "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(5).png?alt=media&token=ae24b8ca-1fcf-43d7-9ad3-2e9c167ece19";
 
     // Test if the image loads successfully
     const img = new Image();
@@ -68,7 +68,7 @@ const Admission: React.FC = () => {
         <div className={styles.contentContainer}>
           <div className={styles.imageSection}>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Group%2091%20(1).png?alt=media&token=39f8a211-6de6-4875-b70b-a4cd63e7c0b7"
+              src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Rectangle%209%20(1).png?alt=media&token=8268ce0d-82d2-42ca-a7c2-1147d6bf39ba"
               alt="Student and teacher at NIS"
               className={styles.admissionImage}
             />
@@ -135,7 +135,7 @@ const Admission: React.FC = () => {
             <div className={styles.experienceCard}>
               <div className={styles.cardImageContainer}>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Photo%20(1).png?alt=media&token=6c532079-e9fa-4d6c-9519-0413eab0a84a"
+                  src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(13).png?alt=media&token=561796d2-8060-451a-b122-136a45aefeec"
                   alt="Students studying in classroom"
                   className={styles.cardImage}
                 />
@@ -150,7 +150,7 @@ const Admission: React.FC = () => {
             <div className={styles.experienceCard}>
               <div className={styles.cardImageContainer}>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Photo%20(2).png?alt=media&token=2c827355-f169-431e-a389-769a4e0e626e"
+                  src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(2).png?alt=media&token=7b4d225c-3f03-414e-abf4-52e7f3f95e6d"
                   alt="Students in sports and activities"
                   className={styles.cardImage}
                 />
@@ -163,7 +163,7 @@ const Admission: React.FC = () => {
             <div className={styles.experienceCard}>
               <div className={styles.cardImageContainer}>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Photo%20(4).png?alt=media&token=52cb68f3-e27e-466f-8f2f-81755b5b2253"
+                  src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(4).png?alt=media&token=add4732f-e5b4-4b8d-b5b1-afce4e99c1f8"
                   alt="Students in assembly gathering"
                   className={styles.cardImage}
                 />
@@ -176,7 +176,7 @@ const Admission: React.FC = () => {
             <div className={styles.experienceCard}>
               <div className={styles.cardImageContainer}>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Photo%20(3).png?alt=media&token=42f13d0c-a9b8-4f8a-b5e0-9eb68e24b9a8"
+                  src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(3).png?alt=media&token=b738fcd1-6daf-40f0-b09f-8a80f1bc8426"
                   alt="Individual student portrait"
                   className={styles.cardImage}
                 />

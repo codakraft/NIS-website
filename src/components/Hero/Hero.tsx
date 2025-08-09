@@ -60,7 +60,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
             key="hero-video"
           >
             <source
-              src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Home_page.mp4?alt=media&token=009b3cde-a418-4116-b59d-03d76e226e93"
+              src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Home_page.mp4?alt=media&token=86fa7274-c599-4bc6-9d19-97b027f678"
               type="video/mp4"
             />
             Your browser does not support the video tag.

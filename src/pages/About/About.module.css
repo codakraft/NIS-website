@@ -387,6 +387,7 @@
   color: #34495e;
   line-height: 1.6;
   margin: 0;
+  text-align: justify;
 }
 
 .glasses {
@@ -399,7 +400,7 @@
   position: relative;
   width: 100%;
   min-height: 600px;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/aboutNISAssembly.png?alt=media&token=b62a308e-69b5-43a7-9883-b0179cdaeca8');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(12).png?alt=media&token=c76330e2-a42f-41b6-9849-15f4e2aa92dc');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
