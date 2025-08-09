@@ -1222,3 +1222,57 @@
     font-size: 12px;
   }
 }
+
+/* Welcome Section - Mobile Optimizations */
+@media (max-width: 1024px) {
+  .welcomeContent {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    gap: 32px;
+  }
+  .welcomeImage,
+  .welcomeText {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .welcomeImage img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcomeSection {
+    padding: 48px 0;
+  }
+  .welcomeImage {
+    padding: 16px 0;
+  }
+  .welcomeText {
+    padding: 0 12px 24px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .welcomeText p {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcomeSection {
+    padding: 40px 0;
+  }
+  .welcomeContent {
+    gap: 20px;
+  }
+  .welcomeText {
+    font-size: 15px;
+    line-height: 1.65;
+    padding: 0 8px 16px;
+  }
+  .welcomeImage img {
+    width: 100%;
+    height: auto;
+  }
+}
