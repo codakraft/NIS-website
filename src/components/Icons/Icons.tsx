@@ -24,6 +24,13 @@ import { ReactComponent as MissionIcon } from "../../assets/icons/mission.svg";
 import { ReactComponent as VisionIcon } from "../../assets/icons/vision.svg";
 import { ReactComponent as ArrowUpIcon } from "../../assets/icons/arrowTop.svg";
 import { ReactComponent as ArrowUpWhiteIcon } from "../../assets/icons/arrowTopWhite.svg";
+import { ReactComponent as EmailIcon } from "../../assets/icons/MailIcon.svg";
+import { ReactComponent as WhatsAppIcon } from "../../assets/icons/whatsapp-icon.svg";
+import { ReactComponent as PhoneRedIcon } from "../../assets/icons/PhoneIconRed.svg";
+import { ReactComponent as ChevronRightIcon } from "../../assets/icons/chevronRight.svg";
+import { ReactComponent as ChevronRightDownIcon } from "../../assets/icons/chevronRightDown.svg";
+import { ReactComponent as ChevronRightTopBlueIcon } from "../../assets/icons/arrowTopBlue.svg";
+import { ReactComponent as ChevronRightRedIcon } from "../../assets/icons/chevronrightRed.svg";
 
 export const ArrowIcon = createIcon(ArrowSvg);
 export const MenuIcon = createIcon(MenuSvg);
@@ -50,3 +57,12 @@ export const MissionIconComponent = createIcon(MissionIcon);
 export const VisionIconComponent = createIcon(VisionIcon);
 export const ArrowUpIconComponent = createIcon(ArrowUpIcon);
 export const ArrowUpWhiteIconComponent = createIcon(ArrowUpWhiteIcon);
+export const EmailIconComponent = createIcon(EmailIcon);
+export const WhatsAppIconComponent = createIcon(WhatsAppIcon);
+export const PhoneRedIconComponent = createIcon(PhoneRedIcon);
+export const ChevronRightIconComponent = createIcon(ChevronRightIcon);
+export const ChevronRightDownIconComponent = createIcon(ChevronRightDownIcon);
+export const ChevronRightTopBlueIconComponent = createIcon(
+  ChevronRightTopBlueIcon
+);
+export const ChevronRightRedIconComponent = createIcon(ChevronRightRedIcon);

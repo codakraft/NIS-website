@@ -63,12 +63,9 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
           >
             Virtual Tour
           </button>
-          <button
-            className={styles.navItem}
-            onClick={() => handleNavigate("contact-us")}
-          >
+          <Link to="/contact" className={styles.navItem} onClick={onClose}>
             Contact Us
-          </button>
+          </Link>
         </nav>
       </div>
     </div>

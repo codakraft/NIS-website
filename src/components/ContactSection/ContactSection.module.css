@@ -1,0 +1,366 @@
+/* ContactSection.module.css */
+
+.contactSection {
+  /* Design tokens */
+  --color-bg: #eef4f8; /* section background if needed */
+  --color-card-bg: #ffffff;
+  --color-text: #2a2e5e; /* deep indigo for headings/body */
+  --color-heading: #3d44a6; /* heading color sampled */
+  --color-placeholder: #b7bfd4;
+  --color-input-border: #d4d8e8;
+  --color-input-border-focus: #5f66b2;
+  --color-divider: #e7e0e6;
+  --color-link: #3d44a6;
+  --color-link-hover: #2f368e;
+  --color-btn: #C02026; /* main red */
+  --color-btn-hover: #C02026;
+  --color-btn-active: #C02026;
+  --color-btn-icon: #C02026; /* darker right segment */
+  --color-icon: #5f66b2; /* mail/phone icon stroke */
+  --color-whatsapp: #25D366;
+  --color-shadow: rgba(24, 32, 72, 0.12);
+  --color-error: #C02026;
+  --color-success: #2e7d32;
+
+  --ff-base: 'Effra', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --fs-heading: 40px;
+  --lh-heading: 48px;
+  --ls-heading: 0.2px;
+
+  --fs-body: 16px;
+  --lh-body: 24px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --radius-input: 6px;
+  --radius-card: 12px;
+  --radius-btn: 6px;
+  --radius-btn-icon: 6px;
+
+  --shadow-card: 0 8px 24px var(--color-shadow);
+
+  --gap-columns: 32px;
+  --gap-row: 16px;
+  --pad-section: 24px 0;
+  --pad-input-y: 14px;
+  --pad-input-x: 16px;
+  --pad-card: 28px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 18px;
+  --btn-icon-width: 36px; /* fixed right segment width */
+}
+
+.contactSection {
+  font-family: var(--ff-base);
+  color: var(--color-text);
+  padding: var(--pad-section);
+}
+
+.container {
+  max-width: 1152px; /* was 1200px */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px; /* left form, right card */
+  grid-template-rows: auto auto; /* title row, then content row */
+  gap: 8px var(--gap-columns);
+  align-items: start;
+}
+
+/* Title spans both columns on the first row */
+.title {
+  grid-column: 1 / -1; /* was 1 / 2 */
+  grid-row: 1 / 2;
+  font-size: var(--fs-heading);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-heading);
+  font-weight: var(--fw-bold);
+  margin: 0 0 6px 0;
+}
+
+/* Form occupies left column, second row */
+.form {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-row) var(--gap-columns);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 12px; /* visually hidden label but remain available */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.input, .textarea {
+  font-family: var(--ff-base);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+  background: #fff;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-input);
+  padding: var(--pad-input-y) var(--pad-input-x);
+  outline: none;
+  box-shadow: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--color-placeholder);
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--color-input-border-focus);
+  box-shadow: 0 0 0 3px rgba(95, 102, 178, 0.2);
+}
+
+.textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.checkboxWrap {
+  grid-column: 1 / 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 3px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(95, 102, 178, 0.25);
+}
+
+.checkbox:checked {
+  background: var(--color-input-border-focus);
+  border-color: var(--color-input-border-focus);
+}
+
+.checkbox:checked::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"><path d="M6.173 12.727L2.1 8.657l1.414-1.414 2.658 2.657 6.314-6.314 1.414 1.414z"/></svg>') center / contain no-repeat;
+  background: #fff;
+}
+
+.newsletterLabel {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.inlineLink {
+  color: var(--color-link);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.inlineLink:hover, .inlineLink:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.actions {
+  grid-column: 2 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: inline-flex;
+  align-items: stretch;
+  border: none;
+  border-radius: var(--radius-btn);
+  overflow: hidden;
+  background: var(--color-btn);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+  transition: background 120ms ease, transform 80ms ease, box-shadow 120ms ease;
+}
+
+.button:hover {
+  background: var(--color-btn-hover);
+}
+
+.button:active {
+  background: var(--color-btn-active);
+  transform: translateY(1px);
+}
+
+.btnText {
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  font-weight: var(--fw-medium);
+  font-size: 15px;
+}
+
+.btnIcon {
+  width: var(--btn-icon-width);
+  display: grid;
+  place-items: center;
+  background: var(--color-btn-icon);
+}
+
+.btnIcon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.errorText {
+  margin-top: 6px;
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+.successText {
+  margin-top: 8px;
+  color: var(--color-success);
+  font-size: 14px;
+}
+
+/* Right card occupies the right column, second row (aligns with form top) */
+.card {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3; /* was 1 / span 2 */
+  background: var(--color-card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--pad-card);
+}
+
+.cardTitle {
+  color: var(--color-heading);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: var(--fw-bold);
+  margin: 0 0 12px 0;
+}
+
+.cardBody {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin-bottom: 16px;
+}
+
+.hr {
+  height: 1px;
+  background: var(--color-divider);
+  margin: 16px 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: start;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-icon);
+}
+
+.iconWhatsapp {
+  color: var(--color-whatsapp);
+}
+
+.cardLink {
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+.cardLink:hover, .cardLink:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 0 24px; /* add safe gutters on tablet */
+  }
+  .title { grid-column: 1 / -1; grid-row: 1 / 2; }
+  .form { grid-column: 1 / -1; grid-row: 2 / 3; grid-template-columns: 1fr; }
+  .card { grid-column: 1 / -1; grid-row: 3 / 4; }
+  .actions { grid-column: 1 / -1; justify-content: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    /* scale tokens for mobile */
+    --fs-heading: 28px;
+    --lh-heading: 34px;
+    --gap-columns: 16px;
+    --gap-row: 12px;
+    --pad-section: 16px 0;
+    --pad-input-y: 12px;
+    --pad-input-x: 14px;
+    --pad-card: 20px;
+    --btn-pad-y: 10px;
+    --btn-pad-x: 14px;
+    --btn-icon-width: 32px;
+  }
+  .container { padding: 0 16px; }
+  .btnIcon svg { width: 14px; height: 14px; }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    --fs-heading: 24px;
+    --lh-heading: 30px;
+    --pad-section: 12px 0;
+    --pad-card: 16px;
+    --gap-columns: 12px;
+    --gap-row: 10px;
+    --btn-pad-y: 9px;
+    --btn-pad-x: 12px;
+    --btn-icon-width: 30px;
+  }
+  .container { padding: 0 12px; }
+  .errorText { font-size: 11px; }
+  .successText { font-size: 13px; }
+}

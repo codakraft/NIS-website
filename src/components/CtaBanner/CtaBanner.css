@@ -1,0 +1,110 @@
+/* CTA Banner */
+.nis-cta {
+  /* Design tokens */
+  --indigo: #2d338a;
+  --title-color: #cfd7ff;          /* light bluish on indigo */
+  --body-color: rgba(255, 255, 255, 0.85);
+  --cta-surface: #f7f9ff;          /* near-white button surface */
+  --cta-red: #e64d4d;
+  --panel-radius: 10px;
+  --pad-x: 32px;
+  --pad-y: 24px;
+  --gap-x: 40px;
+  --container-max-w: 1152px;
+
+  background: var(--indigo);
+  border-radius: var(--panel-radius);
+  width: 100%;
+}
+
+.nis-cta__inner {
+  max-width: var(--container-max-w);
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+  display: grid;
+  grid-template-columns: 35% 1fr auto;
+  align-items: center;
+  column-gap: var(--gap-x);
+}
+
+.nis-cta__title {
+  color: var(--title-color);
+  margin: 0;
+  font-family: 'Effra', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+}
+
+.nis-cta__body {
+  color: var(--body-color);
+  margin: 0;
+  font-family: 'Effra', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 65ch; /* keep ~60–65ch for good readability */
+}
+
+.nis-cta__button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: var(--cta-surface);
+  color: var(--cta-red);
+  padding: 10px 14px 10px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-family: 'Effra', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.nis-cta__button:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.nis-cta__button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #fff inset,
+    0 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.nis-cta__button-icon {
+  display: inline-block;
+  color: var(--cta-red); /* icon and label share same red */
+}
+
+/* Responsiveness */
+@media (max-width: 960px) {
+  .nis-cta__inner {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    text-align: left;
+  }
+  .nis-cta__button {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .nis-cta__inner {
+    padding: 18px 16px;
+  }
+  .nis-cta__title {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+  .nis-cta__body {
+    font-size: 15px;
+  }
+}

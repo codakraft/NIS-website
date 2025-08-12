@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./PageHero.module.css";
 import NavigationMenu from "../NavigationMenu";
 import Logo from "../../assets/logo.png";
@@ -24,6 +25,7 @@ const PageHero: React.FC<PageHeroProps> = ({
   onApplyClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMenuClick = () => {
     setIsMenuOpen(true);
@@ -52,6 +54,10 @@ const PageHero: React.FC<PageHeroProps> = ({
   const handleApplyClick = () => {
     console.log("Apply clicked");
     onApplyClick?.();
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
   };
 
   // Helper function to format background image URL
@@ -97,11 +103,17 @@ const PageHero: React.FC<PageHeroProps> = ({
 
           <div className={styles.rightSection}>
             <div className={styles.logoContainer}>
-              <img
-                src={Logo}
-                alt="Norwegian International School Logo"
-                className={styles.logo}
-              />
+              <button
+                onClick={handleLogoClick}
+                className={styles.logoButton}
+                aria-label="Go to homepage"
+              >
+                <img
+                  src={Logo}
+                  alt="Norwegian International School Logo"
+                  className={styles.logo}
+                />
+              </button>
             </div>
 
             <nav className={styles.actionButtons}>

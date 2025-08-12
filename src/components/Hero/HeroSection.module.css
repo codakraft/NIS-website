@@ -657,6 +657,21 @@
     height: 80px;
   }
 
+  /* Override: Match action buttons to logo width on mobile */
+  .actionButton {
+    width: 80px;
+    min-width: 80px;
+    font-size: 10px;
+    padding: 6px 8px;
+    gap: 6px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .actionButton img {
+    width: 12px;
+    height: 12px;
+  }
+
   .actionButtons {
     flex-direction: column;
     gap: 8px;
@@ -718,16 +733,20 @@
     height: 60px;
   }
 
+  /* Override: Match action buttons to logo width on mobile */
   .actionButton {
-    min-width: 110px;
-    width: 110px;
-    font-size: 11px;
-    padding: 6px 10px;
+    width: 60px;
+    min-width: 60px;
+    font-size: 9px;
+    padding: 4px 6px;
+    gap: 4px;
+    line-height: 1.1;
+    white-space: normal;
+    word-break: break-word;
   }
-
   .actionButton img {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
   }
 
   .rightSection {

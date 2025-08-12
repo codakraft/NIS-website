@@ -1,0 +1,315 @@
+/* Primary School Hero Component Styles */
+.heroSection {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Effra', sans-serif;
+}
+
+/* Hero Header */
+.heroHeader {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+/* Hamburger Menu */
+.hamburgerMenu {
+  background: rgb(43, 49, 133);
+  height: 69px;
+  width: 76px;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburgerMenu:hover {
+  background: rgba(95, 102, 178, 1);
+  transform: translateY(-1px);
+}
+
+.hamburgerLine {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+/* Logo */
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+/* Action Buttons in Header */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.actionButton {
+  background: rgba(220, 104, 104, 0.85);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.actionButton:hover {
+  background: rgba(220, 104, 104, 1);
+  transform: translateY(-1px);
+}
+
+/* Hero Content */
+.heroContent {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 40px 60px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Title Banner */
+.titleBanner {
+  background: rgb(43, 49, 133);
+  color: white;
+  padding: 32px 40px;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  opacity: 0.9;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  font-family: 'Effra', sans-serif;
+}
+
+/* Description */
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgb(43, 49, 133);
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Action Buttons Container */
+.actionButtonsContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.applyButton {
+  background: rgb(220, 104, 104);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Effra', sans-serif;
+}
+
+.applyButton:hover {
+  background: rgb(200, 84, 84);
+  transform: translateY(-1px);
+}
+
+.downloadButton {
+  background: transparent;
+  color: rgb(43, 49, 133);
+  border: 2px solid rgb(43, 49, 133);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Effra', sans-serif;
+}
+
+.downloadButton:hover {
+  background: rgb(43, 49, 133);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Learning Outcomes */
+.learningOutcomes {
+  margin-top: 24px;
+  background: #EEF4F8;
+  max-width: 1200px;
+}
+
+.outcomesTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(43, 49, 133);
+  margin: 0 0 24px 0;
+  font-family: 'Effra', sans-serif;
+}
+
+.outcomesContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.outcomesContent p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(43, 49, 133);
+  margin: 0;
+}
+
+/* Right Content */
+.rightContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .rightContent {
+    order: -1;
+  }
+  
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroHeader {
+    padding: 20px;
+  }
+  
+  .heroContent {
+    padding: 20px;
+    gap: 32px;
+  }
+  
+  .titleBanner {
+    padding: 24px 28px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+  
+  .actionButtonsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .applyButton,
+  .downloadButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .outcomesTitle {
+    font-size: 28px;
+  }
+  
+  .rightSection {
+    align-items: center;
+  }
+  
+  .actionButtons {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+}

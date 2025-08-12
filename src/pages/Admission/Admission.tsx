@@ -211,7 +211,7 @@ const Admission: React.FC = () => {
           </div>
           <div className={styles.policyImageSection}>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flicker-rave.appspot.com/o/Rectangle%2019.png?alt=media&token=8e38aa5d-de0a-4767-957b-3ef5861e91eb"
+              src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753060/_OP_9279_indxqb.jpg"
               alt="Students in laboratory"
               className={styles.policyImage}
             />

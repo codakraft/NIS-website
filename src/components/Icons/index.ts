@@ -24,4 +24,11 @@ export {
   VisionIconComponent,
   ArrowUpIconComponent,
   ArrowUpWhiteIconComponent,
+  EmailIconComponent,
+  WhatsAppIconComponent,
+  PhoneRedIconComponent,
+  ChevronRightIconComponent,
+  ChevronRightDownIconComponent,
+  ChevronRightTopBlueIconComponent,
+  ChevronRightRedIconComponent,
 } from "./Icons";

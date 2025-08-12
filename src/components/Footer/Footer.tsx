@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import {
   FooterLineIcon,
@@ -100,7 +101,9 @@ const Footer: React.FC = () => {
             }}
           />
           <div className={styles.footerLinks}>
-            <p className={styles.footerLink}>Primary School</p>
+            <Link to="/admission/primary-school" className={styles.footerLink}>
+              Primary School
+            </Link>
             <p className={styles.footerLink}>Junior School</p>
             <p className={styles.footerLink}>High School</p>
             <p className={styles.footerLink}>Sixth-Form</p>

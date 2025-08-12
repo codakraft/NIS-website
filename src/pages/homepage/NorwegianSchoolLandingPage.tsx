@@ -99,9 +99,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
   };
 
   const { targetRef, isIntersecting } = useIntersectionObserver();
-  const count1200 = useCountUp(1200, 2500, isIntersecting);
+  const count1200 = useCountUp(14566, 2500, isIntersecting);
   const count100 = useCountUp(100, 2000, isIntersecting);
-  const count95 = useCountUp(95, 1800, isIntersecting);
+  const count95 = useCountUp(100, 1800, isIntersecting);
 
   // State for testimonials
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -232,15 +232,19 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
                 <span className={styles.statisticNumber}>
                   {count1200.toLocaleString()}+
                 </span>
-                <span className={styles.statisticLabel}>Lorem ipsum</span>
+                <span className={styles.statisticLabel}>
+                  Enrollments since inception
+                </span>
               </div>
               <div className={styles.statistic}>
-                <span className={styles.statisticNumber}>{count100}+</span>
-                <span className={styles.statisticLabel}>Lorem ipsum</span>
+                <span className={styles.statisticNumber}>{count100}%</span>
+                <span className={styles.statisticLabel}>
+                  Passes into university
+                </span>
               </div>
               <div className={styles.statistic}>
                 <span className={styles.statisticNumber}>{count95}%</span>
-                <span className={styles.statisticLabel}>Lorem ipsum</span>
+                <span className={styles.statisticLabel}>Happy parents</span>
               </div>
             </div>
           </div>
@@ -324,43 +328,63 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
             onTouchEnd={handleTouchEnd}
           >
             <div className={styles.categoryCard}>
-              <Nis1Icon style={{ width: "100%", height: "100%" }} />
+              {/* <Nis1Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753061/_OP_9309_fdqvmd.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Academics</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis2Icon style={{ width: "100%", height: "100%" }} />
+              {/* <Nis2Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753057/_OP_8989_bnamas.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Culture</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis3Icon style={{ width: "100%", height: "100%" }} />
+              {/* <Nis3Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753054/_OP_8928_pvfilt.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Culture</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis4Icon style={{ width: "100%", height: "100%" }} />
+              {/* <Nis4Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753056/_OP_9001_gj0bek.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Academics</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -373,43 +397,60 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
             onTouchEnd={handleTouchEnd}
           >
             <div className={styles.categoryCard}>
-              <Nis1Icon style={{ width: "100%", height: "100%" }} />
+              {/* <Nis1Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753060/_OP_9279_indxqb.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Campus</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis2Icon style={{ width: "100%", height: "100%" }} />
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753053/_OP_8918_xq0twl.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Community</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis3Icon style={{ width: "100%", height: "100%" }} />
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753047/_OP_8753_lycn8p.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Campus</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className={styles.categoryCard}>
-              <Nis4Icon style={{ width: "100%", height: "100%" }} />
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753045/_OP_8730_gjlxlv.jpg"
+                alt="Smiling student with glasses"
+                className={styles.studentImage}
+              />
               <div className={styles.categoryOverlay}>
                 <h3 className={styles.categoryTitle}>Community</h3>
-                <p className={styles.categoryDescription}>
+                {/* <p className={styles.categoryDescription}>
                   Lorem ipsum dolor sit amet consectetur. Malesuada interdum mi
                   laoreet volutpat.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

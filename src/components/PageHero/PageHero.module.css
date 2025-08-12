@@ -78,6 +78,24 @@
   justify-content: flex-end;
 }
 
+.logoButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logoButton:hover {
+  transform: scale(1.05);
+}
+
+.logoButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .logo {
   width: 150px;
   height: 150px;
