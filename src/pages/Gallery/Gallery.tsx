@@ -12,34 +12,34 @@ import {
 const galleryImages = [
   // Classroom images
   {
-    src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753061/_OP_9309_fdqvmd.jpg",
+    src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753056/_OP_9001_gj0bek.jpg",
     height: "tall",
-    category: "Classroom",
+    category: "Culture",
   },
   {
-    src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753057/_OP_8989_bnamas.jpg",
+    src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753058/_OP_9037_s3nppy.jpg",
     height: "medium",
-    category: "Classroom",
+    category: "Culture",
   },
   {
     src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753054/_OP_8928_pvfilt.jpg",
     height: "short",
-    category: "Classroom",
+    category: "Culture",
   },
   {
-    src: "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753056/_OP_9001_gj0bek.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/_OP_9054.jpg?alt=media&token=0428cde0-1cce-4ff4-8338-bae8628dff81",
     height: "tall",
-    category: "Classroom",
+    category: "Culture",
   },
   {
     src: "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(13).png?alt=media&token=561796d2-8060-451a-b122-136a45aefeec",
     height: "medium",
-    category: "Classroom",
+    category: "Culture",
   },
   {
     src: "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Photo%20(2).png?alt=media&token=7b4d225c-3f03-414e-abf4-52e7f3f95e6d",
     height: "short",
-    category: "Classroom",
+    category: "Culture",
   },
 
   // Dining/School life images
@@ -140,7 +140,10 @@ const galleryImages = [
 ];
 
 const categories = [
-  { name: "Culture", images: galleryImages },
+  {
+    name: "Culture",
+    images: galleryImages.filter((img) => img.category === "Culture"),
+  },
   {
     name: "Academics",
     images: galleryImages.filter((img) => img.category === "Classroom"),
