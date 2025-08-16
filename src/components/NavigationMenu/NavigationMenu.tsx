@@ -57,12 +57,12 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
           >
             NIS Experience
           </Link>
-          <button
-            className={styles.navItem}
-            onClick={() => handleNavigate("virtual-tour")}
-          >
+          <Link to="/tour" className={styles.navItem} onClick={onClose}>
             Virtual Tour
-          </button>
+          </Link>
+          <Link to="/gallery" className={styles.navItem} onClick={onClose}>
+            Gallery
+          </Link>
           <Link to="/contact" className={styles.navItem} onClick={onClose}>
             Contact Us
           </Link>

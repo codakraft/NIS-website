@@ -31,4 +31,10 @@ export {
   ChevronRightDownIconComponent,
   ChevronRightTopBlueIconComponent,
   ChevronRightRedIconComponent,
+  SubjectIcon1Component,
+  SubjectIcon2Component,
+  SubjectIcon3Component,
+  SubjectIcon4Component,
+  SubjectIcon5Component,
+  SubjectIcon6Component,
 } from "./Icons";

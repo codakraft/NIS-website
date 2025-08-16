@@ -1504,3 +1504,89 @@
     height: 250px;
   }
 }
+
+/* Content Section Styles */
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 80px 20px;
+  margin: 0 auto;
+}
+
+.introTextBox {
+  width: 100%;
+  max-width: 1152px;
+  min-height: 204px;
+  background-color: #ffffff;
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.introText {
+  font-family: 'Effra', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  text-align: center;
+}
+
+/* Responsive Design for Content Section */
+@media (max-width: 1024px) {
+  .contentSection {
+    padding: 60px 20px;
+  }
+  
+  .introTextBox {
+    padding: 50px 30px;
+  }
+  
+  .introText {
+    font-size: 18px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentSection {
+    padding: 40px 15px;
+  }
+  
+  .introTextBox {
+    padding: 40px 25px;
+    min-height: 150px;
+  }
+  
+  .introText {
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentSection {
+    padding: 30px 10px;
+  }
+  
+  .introTextBox {
+    padding: 30px 20px;
+    min-height: 120px;
+  }
+  
+  .introText {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

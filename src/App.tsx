@@ -6,6 +6,8 @@ import Admission from "./pages/Admission";
 import PrimarySchool from "./pages/Admission/PrimarySchool";
 import NISExperience from "./pages/NISExperience";
 import Contact from "./pages/Contact";
+import VirtualTour from "./pages/Tour/Tour";
+import Gallery from "./pages/Gallery";
 import "./styles/globals.css";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/admission" element={<Admission />} />
         <Route path="/admission/primary-school" element={<PrimarySchool />} />
         <Route path="/nis-experience" element={<NISExperience />} />
+        <Route path="/tour" element={<VirtualTour />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>

@@ -63,6 +63,24 @@
   justify-content: flex-end;
 }
 
+.logoButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logoButton:hover {
+  transform: scale(1.05);
+}
+
+.logoButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .logo {
   width: 150px;
   height: 150px;
@@ -83,22 +101,27 @@
   border-radius: 4px;
   color: white;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 150px;
+  justify-content: space-between;
   transition: all 0.3s ease;
-  min-width: 120px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(220, 104, 104, 0.2);
 }
 
 .actionButton:hover {
   background: rgba(220, 104, 104, 1);
-  transform: translateY(-1px);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(220, 104, 104, 0.3);
 }
 
 /* Hero Content */
 .heroContent {
+  position: relative;
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -159,7 +182,7 @@
 }
 
 .applyButton {
-  background: rgb(220, 104, 104);
+  background: #C02026;
   color: white;
   border: none;
   padding: 14px 24px;
@@ -171,17 +194,17 @@
   font-family: 'Effra', sans-serif;
 }
 
-.applyButton:hover {
+/* .applyButton:hover {
   background: rgb(200, 84, 84);
   transform: translateY(-1px);
-}
+} */
 
 .downloadButton {
   background: transparent;
-  color: rgb(43, 49, 133);
-  border: 2px solid rgb(43, 49, 133);
+  color: #2D338A;
+  /* border: 2px solid rgb(43, 49, 133); */
   padding: 12px 24px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -190,6 +213,7 @@
   gap: 8px;
   transition: all 0.3s ease;
   font-family: 'Effra', sans-serif;
+  text-decoration: underline;
 }
 
 .downloadButton:hover {
@@ -198,11 +222,45 @@
   transform: translateY(-1px);
 }
 
+.downloadLink {
+  background: none;
+  border: none;
+  color: #2D338A;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Effra', sans-serif;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.downloadLink:hover {
+  color: #1A1F5C;
+  text-decoration: none;
+}
+
 /* Learning Outcomes */
 .learningOutcomes {
-  margin-top: 24px;
+  position: absolute;
+  top: calc(100% - 100px);
+  left: 0;
+  right: 0;
+  width: 100vw;
   background: #EEF4F8;
-  max-width: 1200px;
+  padding: 32px 0;
+  z-index: 1;
+  height: 377px;
+}
+
+.outcomesContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
 }
 
 .outcomesTitle {
@@ -217,6 +275,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 500px;
 }
 
 .outcomesContent p {
@@ -232,12 +291,15 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 40px;
+  position: relative;
+  z-index: 10;
 }
 
 .imageContainer {
   width: 100%;
   max-width: 500px;
   position: relative;
+  z-index: 10;
 }
 
 .heroImage {
@@ -263,24 +325,61 @@
   .title {
     font-size: 40px;
   }
+  
+  .learningOutcomes {
+    padding: 32px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 38px;
+  }
+  
+  .titleBanner {
+    padding: 28px 36px;
+    max-width: 450px;
+  }
+  
+  .heroContent {
+    gap: 35px;
+    padding: 35px;
+  }
+  
+  .learningOutcomes {
+    padding: 28px 0;
+  }
+  
+  .outcomesContainer {
+    padding: 0 35px;
+  }
+  
+  .outcomesTitle {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 768px) {
   .heroHeader {
-    padding: 20px;
+    padding: 15px 20px;
   }
   
   .heroContent {
     padding: 20px;
-    gap: 32px;
+    gap: 28px;
   }
   
   .titleBanner {
     padding: 24px 28px;
+    max-width: 100%;
   }
   
   .title {
     font-size: 32px;
+  }
+  
+  .description {
+    font-size: 16px;
   }
   
   .actionButtonsContainer {
@@ -290,26 +389,156 @@
   }
   
   .applyButton,
-  .downloadButton {
+  .downloadLink {
     width: 100%;
     justify-content: center;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+  
+  .learningOutcomes {
+    padding: 24px 0;
+  }
+  
+  .outcomesContainer {
+    padding: 0 20px;
   }
   
   .outcomesTitle {
     font-size: 28px;
   }
   
+  .outcomesContent p {
+    font-size: 15px;
+  }
+  
   .rightSection {
-    align-items: center;
+    gap: 12px;
   }
   
   .actionButtons {
-    flex-direction: row;
+    gap: 6px;
+  }
+  
+  .actionButton {
+    padding: 8px 16px;
+    font-size: 11px;
+    width: 100px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .hamburgerMenu {
+    width: 55px;
+    height: 50px;
+    padding: 12px;
+  }
+  
+  .hamburgerLine {
+    width: 30px;
+    height: 3px;
+  }
+  
+  .imageContainer {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroHeader {
+    padding: 10px 15px;
+  }
+  
+  .heroContent {
+    padding: 15px;
+    gap: 24px;
+  }
+  
+  .titleBanner {
+    padding: 20px 24px;
+  }
+  
+  .eyebrow {
+    font-size: 12px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 15px;
+  }
+  
+  .actionButtonsContainer {
+    gap: 10px;
+  }
+  
+  .applyButton,
+  .downloadLink {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  
+  .learningOutcomes {
+    padding: 20px 0;
+  }
+  
+  .outcomesContainer {
+    padding: 0 15px;
+  }
+  
+  .outcomesTitle {
+    font-size: 24px;
+  }
+  
+  .outcomesContent p {
+    font-size: 14px;
+  }
+  
+  .rightSection {
     gap: 8px;
   }
   
   .logo {
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .actionButtons {
+    gap: 4px;
+  }
+  
+  .actionButton {
+    padding: 6px 12px;
+    font-size: 10px;
+    width: 70px;
+  }
+  
+  .actionButton img {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .hamburgerMenu {
+    width: 45px;
+    height: 40px;
+    padding: 8px;
+  }
+  
+  .hamburgerLine {
+    width: 25px;
+    height: 2px;
+  }
+  
+  .imageContainer {
+    max-width: 300px;
+  }
+  
+  .heroImage {
+    border-radius: 8px;
   }
 }

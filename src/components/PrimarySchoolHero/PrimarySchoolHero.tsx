@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./PrimarySchoolHero.module.css";
 import NavigationMenu from "../NavigationMenu";
 import Logo from "../../assets/logo.png";
 import chevronRight from "../../assets/chevron-right.png";
+import { ChevronRightTopBlueIconComponent } from "../Icons";
 
 interface PrimarySchoolHeroProps {
   onMenuClick?: () => void;
@@ -18,6 +20,7 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
   onApplyClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMenuClick = () => {
     setIsMenuOpen(true);
@@ -35,6 +38,7 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked");
+    navigate("/nis-experience");
     onNISExperienceClick?.();
   };
 
@@ -45,7 +49,11 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
 
   const handleApplyClick = () => {
     console.log("Apply clicked");
-    onApplyClick?.();
+    // onApplyClick?.();
+    window.open(
+      "https://norwegianschool.educare.school/admission-form",
+      "_blank"
+    );
   };
 
   const handleApplyProgram = () => {
@@ -58,6 +66,10 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
   const handleDownloadBrochure = () => {
     console.log("Download Brochure clicked");
     // Add download logic here
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
   };
 
   return (
@@ -85,11 +97,17 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
 
           <div className={styles.rightSection}>
             <div className={styles.logoContainer}>
-              <img
-                src={Logo}
-                alt="Norwegian International School Logo"
-                className={styles.logo}
-              />
+              <button
+                onClick={handleLogoClick}
+                className={styles.logoButton}
+                aria-label="Go to homepage"
+              >
+                <img
+                  src={Logo}
+                  alt="Norwegian International School Logo"
+                  className={styles.logo}
+                />
+              </button>
             </div>
 
             <nav className={styles.actionButtons}>
@@ -157,48 +175,14 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
                 Apply Program
               </button>
               <button
-                className={styles.downloadButton}
+                className={styles.downloadLink}
                 onClick={handleDownloadBrochure}
               >
                 Download Brochure
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M7 17L17 7M10 7h7v7" />
-                </svg>
+                <ChevronRightTopBlueIconComponent
+                  style={{ width: "16px", height: "16px" }}
+                />
               </button>
-            </div>
-
-            {/* Learning Outcomes Section */}
-            <div className={styles.learningOutcomes}>
-              <h2 className={styles.outcomesTitle}>Learning Outcomes</h2>
-              <div className={styles.outcomesContent}>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Morbi rhoncus tellus
-                  nulla gravida ut tellus ac dui. Arcu sapien phasellus
-                  facilisis fringilla mauris cursus id. Mus tortor.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Nullam urna quisque
-                  ultrices amet. Eget amet in lectus non faucibus eu integer.
-                  Non nisl mattis sed suspendisse morbi leo.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. A ut dignissim
-                  pellentesque consectetur faucibus sapien ut sit. Suspendisse
-                  integer sed a donec ornare aliquam tortor.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Viverra sed ut velit
-                  nec bibendum viverra tristique fermentum consectetur. Mi velit
-                  morbi laoreet aliquam tellus placerat.
-                </p>
-              </div>
             </div>
           </div>
 
@@ -209,6 +193,25 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
                 alt="Primary school students in sports uniforms"
                 className={styles.heroImage}
               />
+            </div>
+          </div>
+        </div>
+        {/* Learning Outcomes Section */}
+        <div className={styles.learningOutcomes}>
+          <div className={styles.outcomesContainer}>
+            <h2 className={styles.outcomesTitle}>Learning Outcomes</h2>
+            <div className={styles.outcomesContent}>
+              <p>
+                At Norwegian International Schools you can enrol your wards in
+                our Primary School into all Arts, Science and Commercial subject
+                areas to get the best of both Nigerian and British curriculum.
+              </p>
+              <p>
+                Our Primary schools are for Six years after which students take
+                their school leaving certificate examination as we are
+                accredited by the Basic Examination Board in Nigeria and the
+                SAT.
+              </p>
             </div>
           </div>
         </div>

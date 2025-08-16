@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Admission.module.css";
 import PrimarySchoolHero from "../../components/PrimarySchoolHero";
 import Footer from "../../components/Footer";
+import CompulsorySubjects from "../../components/CompulsorySubjects";
+import RelatedPrograms from "../../components/RelatedPrograms";
 import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
 import {
   ArrowUpIconComponent,
@@ -62,15 +64,19 @@ const PrimarySchool: React.FC = () => {
       />
 
       <div className={styles.bodyContent}>
+        {/* Compulsory Subjects Section */}
+        <CompulsorySubjects />
+
+        {/* Related Programs Section */}
+        <RelatedPrograms />
+
         <div className={styles.ctaBannerContainer}>
           <CtaBanner
             href="https://norwegianschool.educare.school/admission-form"
             target="_blank"
           />
         </div>
-      </div>
-
-      {/* Footer Section */}
+      </div>      {/* Footer Section */}
       <Footer />
     </div>
   );

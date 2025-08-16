@@ -31,6 +31,12 @@ import { ReactComponent as ChevronRightIcon } from "../../assets/icons/chevronRi
 import { ReactComponent as ChevronRightDownIcon } from "../../assets/icons/chevronRightDown.svg";
 import { ReactComponent as ChevronRightTopBlueIcon } from "../../assets/icons/arrowTopBlue.svg";
 import { ReactComponent as ChevronRightRedIcon } from "../../assets/icons/chevronrightRed.svg";
+import { ReactComponent as SubjectIcon1 } from "../../assets/icons/subjectIcon1.svg";
+import { ReactComponent as SubjectIcon2 } from "../../assets/icons/subjectIcon2.svg";
+import { ReactComponent as SubjectIcon3 } from "../../assets/icons/subjectIcon3.svg";
+import { ReactComponent as SubjectIcon4 } from "../../assets/icons/subjectIcon4.svg";
+import { ReactComponent as SubjectIcon5 } from "../../assets/icons/subjectIcon5.svg";
+import { ReactComponent as SubjectIcon6 } from "../../assets/icons/subjectIcon6.svg";
 
 export const ArrowIcon = createIcon(ArrowSvg);
 export const MenuIcon = createIcon(MenuSvg);
@@ -66,3 +72,9 @@ export const ChevronRightTopBlueIconComponent = createIcon(
   ChevronRightTopBlueIcon
 );
 export const ChevronRightRedIconComponent = createIcon(ChevronRightRedIcon);
+export const SubjectIcon1Component = createIcon(SubjectIcon1);
+export const SubjectIcon2Component = createIcon(SubjectIcon2);
+export const SubjectIcon3Component = createIcon(SubjectIcon3);
+export const SubjectIcon4Component = createIcon(SubjectIcon4);
+export const SubjectIcon5Component = createIcon(SubjectIcon5);
+export const SubjectIcon6Component = createIcon(SubjectIcon6);
