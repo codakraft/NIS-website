@@ -229,7 +229,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               {/* Text and Button */}
               <div className={styles.aboutTextBlock}>
                 <p className={styles.aboutDescription}>
-                  Norwegian International School has over 30 years' experience
+                  Norwegian International School has over 40 years' experience
                   in providing top quality international education in Port
                   Harcourt. Along with academic rigour, strong tradition and
                   innovation, we equip our pupils with the ability to be
