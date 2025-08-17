@@ -9,6 +9,10 @@ import {
   TeacherStudent2Icon,
   LineIcon,
   OrnamentIcon,
+  Nis1Icon,
+  Nis2Icon,
+  Nis3Icon,
+  Nis4Icon,
 } from "../../components/Icons";
 import { testimonialsData } from "../../data/siteData";
 
@@ -337,8 +341,11 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
       <section className={styles.universitySection}>
         <div className={styles.universityContainer}>
           <h2 className={styles.universityTitle}>
-            OUR GRADUATES HAVE GONE ON TO CONTINUE THEIR EDUCATION AT THE
-            WORLD'S MOST PRESTIGIOUS SCHOOLS.
+            <span className={styles.titleDesktop}>
+              OUR GRADUATES HAVE GONE ON TO CONTINUE THEIR EDUCATION AT THE
+              WORLD'S MOST PRESTIGIOUS SCHOOLS.
+            </span>
+            <span className={styles.titleMobile}>WHERE OUR GRADUATES GO</span>
           </h2>
           <div className={styles.carouselContainer}>
             <div className={styles.carousel}>

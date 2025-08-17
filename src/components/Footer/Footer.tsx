@@ -109,6 +109,26 @@ const Footer: React.FC = () => {
             <p className={styles.footerLink}>Sixth-Form</p>
           </div>
         </div>
+
+        <div className={styles.footerSection}>
+          <h4 className={styles.footerTitle}>Our Affiliations</h4>
+          <FooterLineIcon
+            style={{
+              width: "50%",
+              height: "100%",
+              marginBottom: 24,
+            }}
+          />
+          <div className={styles.affiliationsContainer}>
+            <img
+              src="https://norwegianinternationalschools.com/wp-content/uploads/2024/06/affiliations-new-Main.png"
+              alt="School Affiliations"
+              className={styles.affiliationsImage}
+              width="497"
+              height="199"
+            />
+          </div>
+        </div>
       </div>
 
       <div className={styles.footerBottom}>
