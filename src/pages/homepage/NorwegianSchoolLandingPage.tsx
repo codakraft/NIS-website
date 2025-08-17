@@ -212,7 +212,12 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
           <div className={styles.aboutRow}>
             {/* Left Image */}
             <div className={styles.aboutImageLeft}>
-              <TeacherStudent2Icon style={{ width: "100%", height: "100%" }} />
+              {/* <TeacherStudent2Icon style={{ width: "100%", height: "100%" }} /> */}
+              <img
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1755427340/Rectangle_lz3ppx.png"
+                alt="About NIS"
+                style={{ width: "100%", height: "100%" }}
+              />
             </div>
 
             {/* Right Side: Image and Text */}
