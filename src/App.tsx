@@ -14,7 +14,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const VirtualTour = lazy(() => import("./pages/Tour/Tour"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 
-// Loading fallback component
+// Loading fallback component with faster rendering
 const LoadingSpinner = () => (
   <div
     style={{
@@ -22,20 +22,32 @@ const LoadingSpinner = () => (
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
-      background:
-        "linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%)",
+      background: "#f8fafc",
+      fontFamily: "system-ui, -apple-system, sans-serif",
     }}
   >
-    <div
-      style={{
-        width: "40px",
-        height: "40px",
-        border: "4px solid rgba(45, 51, 138, 0.3)",
-        borderTop: "4px solid #2D338A",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-      }}
-    ></div>
+    <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          width: "32px",
+          height: "32px",
+          border: "3px solid #e2e8f0",
+          borderTop: "3px solid #2D338A",
+          borderRadius: "50%",
+          animation: "spin 0.8s linear infinite",
+          margin: "0 auto 16px",
+        }}
+      />
+      <div
+        style={{
+          color: "#64748b",
+          fontSize: "14px",
+          fontWeight: "500",
+        }}
+      >
+        Loading...
+      </div>
+    </div>
     <style>
       {`
         @keyframes spin {

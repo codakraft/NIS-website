@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HeroSection.module.css";
 import { NorwegianSchoolHeaderProps } from "../../types/norwegian-school";
@@ -13,7 +13,26 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
   onApplyClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const navigate = useNavigate();
+
+  // Lazy load video after initial render
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowVideo(true);
+    }, 100); // Small delay to allow page to render first
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleVideoLoad = () => {
+    console.log("Video loaded successfully");
+  };
+
+  const handleVideoError = () => {
+    console.warn("Video failed to load, using fallback image");
+  };
 
   const handleMenuClick = () => {
     setIsMenuOpen(true);
@@ -55,20 +74,26 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
       />
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={styles.heroImage}
-            key="hero-video"
-          >
-            <source
-              src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Home_page.mp4?alt=media&token=86fa7274-c599-4bc6-9d19-97b027f678f1"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          {/* Lazy-loaded video */}
+          {showVideo && (
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={styles.heroImage}
+              onLoadedData={handleVideoLoad}
+              onError={handleVideoError}
+              preload="none"
+            >
+              <source
+                src="https://res.cloudinary.com/dgslbycvk/video/upload/v1755888196/HomePageVideo_lfwpu9.mov"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          )}
           <div className={styles.heroOverlay}></div>
         </div>
 

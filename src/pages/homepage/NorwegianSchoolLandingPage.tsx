@@ -12,6 +12,12 @@ import {
 } from "../../components/Icons";
 import { testimonialsData } from "../../data/siteData";
 import { useOptimizedData, useThrottle } from "../../hooks/usePerformance";
+import {
+  useProgressiveLoading,
+  useConnectionSpeed,
+  preloadCriticalResources,
+  measurePerformance,
+} from "../../hooks/usePerformanceOptimizations";
 
 // Memoized university logos data to prevent recreation on every render
 const universityLogos = [
@@ -99,6 +105,26 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
   onApplyClick,
 }) => {
   const navigate = useNavigate();
+
+  // Performance monitoring
+  const [endMeasure] = useState(() => measurePerformance("homepage-render"));
+
+  // Progressive loading for non-critical content
+  const isUniversityLogosReady = useProgressiveLoading(1000);
+  const isTestimonialsReady = useProgressiveLoading(1500);
+
+  // Connection speed detection
+  const isSlowConnection = useConnectionSpeed();
+
+  // Preload critical resources on mount
+  useEffect(() => {
+    preloadCriticalResources();
+
+    // Cleanup performance measurement on unmount
+    return () => {
+      endMeasure();
+    };
+  }, [endMeasure]);
 
   // Function to navigate to gallery page
   const handleImageClick = () => {
@@ -297,98 +323,107 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
       </section>
 
       {/* Testimonials Section */}
-      <section
-        className={styles.testimonialsSection}
-        ref={testimonialRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div className={styles.testimonialsWrapper}>
-          <div
-            className={styles.testimonialBluePanel}
-            style={{
-              backgroundColor:
-                currentTestimonial % 2 === 0 ? "#393e8e" : "#dc2c2c",
-            }}
-          >
-            <div className={styles.testimonialContent} key={currentTestimonial}>
-              <div className={styles.sectionTag}>TESTIMONIALS</div>
-              <h2 className={styles.testimonialsTitle}>Hear what they say</h2>
-              <div className={styles.testimonialQuote}>
-                <div className={styles.quoteIcon}>"</div>
-                <p className={styles.quoteText}>
-                  {testimonialsData[currentTestimonial].quote}
-                </p>
-                <div className={styles.quoteAuthor}>
-                  <strong>{testimonialsData[currentTestimonial].author}</strong>
-                  <span>{testimonialsData[currentTestimonial].position}</span>
+      {isTestimonialsReady && (
+        <section
+          className={styles.testimonialsSection}
+          ref={testimonialRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className={styles.testimonialsWrapper}>
+            <div
+              className={styles.testimonialBluePanel}
+              style={{
+                backgroundColor:
+                  currentTestimonial % 2 === 0 ? "#393e8e" : "#dc2c2c",
+              }}
+            >
+              <div
+                className={styles.testimonialContent}
+                key={currentTestimonial}
+              >
+                <div className={styles.sectionTag}>TESTIMONIALS</div>
+                <h2 className={styles.testimonialsTitle}>Hear what they say</h2>
+                <div className={styles.testimonialQuote}>
+                  <div className={styles.quoteIcon}>"</div>
+                  <p className={styles.quoteText}>
+                    {testimonialsData[currentTestimonial].quote}
+                  </p>
+                  <div className={styles.quoteAuthor}>
+                    <strong>
+                      {testimonialsData[currentTestimonial].author}
+                    </strong>
+                    <span>{testimonialsData[currentTestimonial].position}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.testimonialDotsWrapper}>
+              <div
+                className={styles.testimonialRedPanel}
+                style={{
+                  backgroundColor:
+                    currentTestimonial % 2 === 0 ? "#dc2c2c" : "#393e8e",
+                }}
+              >
+                <div className={styles.testimonialDots}>
+                  {testimonialsData.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`${styles.dot} ${
+                        index === currentTestimonial ? styles.active : ""
+                      }`}
+                      onClick={() => setCurrentTestimonial(index)}
+                      aria-label={`View testimonial ${index + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.testimonialDotsWrapper}>
-            <div
-              className={styles.testimonialRedPanel}
-              style={{
-                backgroundColor:
-                  currentTestimonial % 2 === 0 ? "#dc2c2c" : "#393e8e",
-              }}
-            >
-              <div className={styles.testimonialDots}>
-                {testimonialsData.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`${styles.dot} ${
-                      index === currentTestimonial ? styles.active : ""
-                    }`}
-                    onClick={() => setCurrentTestimonial(index)}
-                    aria-label={`View testimonial ${index + 1}`}
-                  />
+        </section>
+      )}
+
+      {/* University Partners Carousel */}
+      {isUniversityLogosReady && (
+        <section className={styles.universitySection}>
+          <div className={styles.universityContainer}>
+            <h2 className={styles.universityTitle}>
+              OUR GRADUATES HAVE GONE ON TO CONTINUE THEIR EDUCATION AT THE
+              WORLD'S MOST PRESTIGIOUS SCHOOLS.
+            </h2>
+            <div className={styles.carouselContainer}>
+              <div className={styles.carousel}>
+                {/* First set of logos */}
+                {universityLogos.map((university, index) => (
+                  <div key={`first-${index}`} className={styles.logoItem}>
+                    <div className={styles.logoContent}>
+                      <LazyImage
+                        src={university.logo}
+                        alt={university.name}
+                        className={styles.logoImage}
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless scrolling */}
+                {universityLogos.map((university, index) => (
+                  <div key={`second-${index}`} className={styles.logoItem}>
+                    <div className={styles.logoContent}>
+                      <LazyImage
+                        src={university.logo}
+                        alt={university.name}
+                        className={styles.logoImage}
+                      />
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* University Partners Carousel */}
-      <section className={styles.universitySection}>
-        <div className={styles.universityContainer}>
-          <h2 className={styles.universityTitle}>
-            OUR GRADUATES HAVE GONE ON TO CONTINUE THEIR EDUCATION AT THE
-            WORLD'S MOST PRESTIGIOUS SCHOOLS.
-          </h2>
-          <div className={styles.carouselContainer}>
-            <div className={styles.carousel}>
-              {/* First set of logos */}
-              {universityLogos.map((university, index) => (
-                <div key={`first-${index}`} className={styles.logoItem}>
-                  <div className={styles.logoContent}>
-                    <LazyImage
-                      src={university.logo}
-                      alt={university.name}
-                      className={styles.logoImage}
-                    />
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate set for seamless scrolling */}
-              {universityLogos.map((university, index) => (
-                <div key={`second-${index}`} className={styles.logoItem}>
-                  <div className={styles.logoContent}>
-                    <LazyImage
-                      src={university.logo}
-                      alt={university.name}
-                      className={styles.logoImage}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Categories Grid Section */}
       <section className={styles.categoriesSection}>
