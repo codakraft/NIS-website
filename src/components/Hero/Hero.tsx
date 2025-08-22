@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./HeroSection.module.css";
 import { NorwegianSchoolHeaderProps } from "../../types/norwegian-school";
 import Logo from "../../assets/logo.png";
@@ -12,6 +13,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
   onApplyClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMenuClick = () => {
     setIsMenuOpen(true);
@@ -30,11 +32,13 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked");
+    navigate("/nis-experience");
     onNISExperienceClick?.();
   };
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked");
+    navigate("/tour");
     onTakeATourClick?.();
   };
 

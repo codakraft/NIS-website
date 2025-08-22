@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Contact.module.css";
 import PageHero from "../../components/PageHero";
 import Footer from "../../components/Footer";
@@ -9,6 +10,7 @@ import CtaBanner from "../../components/CtaBanner/CtaBanner";
 import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
 
 const Contact: React.FC = () => {
+  const navigate = useNavigate();
   const [backgroundImage, setBackgroundImage] = useState<string>("");
 
   const handleMenuClick = () => {
@@ -17,12 +19,12 @@ const Contact: React.FC = () => {
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked from Contact page");
-    // Add scroll to NIS experience section
+    navigate("/nis-experience");
   };
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked from Contact page");
-    // Add virtual tour logic
+    navigate("/tour");
   };
 
   const handleApplyClick = () => {

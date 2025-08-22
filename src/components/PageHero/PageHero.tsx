@@ -43,11 +43,13 @@ const PageHero: React.FC<PageHeroProps> = ({
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked");
+    navigate("/nis-experience");
     onNISExperienceClick?.();
   };
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked");
+    navigate("/tour");
     onTakeATourClick?.();
   };
 

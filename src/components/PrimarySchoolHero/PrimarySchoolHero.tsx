@@ -44,6 +44,7 @@ const PrimarySchoolHero: React.FC<PrimarySchoolHeroProps> = ({
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked");
+    navigate("/tour");
     onTakeATourClick?.();
   };
 

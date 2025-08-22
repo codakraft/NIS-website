@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Admission.module.css";
 import PrimarySchoolHero from "../../components/PrimarySchoolHero";
 import Footer from "../../components/Footer";
@@ -12,6 +13,7 @@ import {
 import CtaBanner from "../../components/CtaBanner/CtaBanner";
 
 const PrimarySchool: React.FC = () => {
+  const navigate = useNavigate();
   const [backgroundImage, setBackgroundImage] = useState<string>("");
 
   const handleMenuClick = () => {
@@ -20,12 +22,12 @@ const PrimarySchool: React.FC = () => {
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked from Primary School page");
-    // Add scroll to NIS experience section
+    navigate("/nis-experience");
   };
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked from Primary School page");
-    // Add virtual tour logic
+    navigate("/tour");
   };
 
   const handleApplyClick = () => {
@@ -62,7 +64,6 @@ const PrimarySchool: React.FC = () => {
         onTakeATourClick={handleTakeATourClick}
         onApplyClick={handleApplyClick}
       />
-
       <div className={styles.bodyContent}>
         {/* Compulsory Subjects Section */}
         <CompulsorySubjects />
@@ -76,7 +77,8 @@ const PrimarySchool: React.FC = () => {
             target="_blank"
           />
         </div>
-      </div>      {/* Footer Section */}
+      </div>{" "}
+      {/* Footer Section */}
       <Footer />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./About.module.css";
 import PageHero from "../../components/PageHero";
 import Footer from "../../components/Footer";
@@ -10,18 +11,20 @@ import {
 } from "../../components/Icons";
 
 const About: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleMenuClick = () => {
     console.log("Menu clicked from About page");
   };
 
   const handleNISExperienceClick = () => {
     console.log("NIS Experience clicked from About page");
-    // Add scroll to NIS experience section
+    navigate("/nis-experience");
   };
 
   const handleTakeATourClick = () => {
     console.log("Take a Tour clicked from About page");
-    // Add virtual tour logic
+    navigate("/tour");
   };
 
   const handleApplyClick = () => {

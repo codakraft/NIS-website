@@ -22,15 +22,16 @@ const LoadingSpinner = () => (
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
-      background: "linear-gradient(135deg, #393e8e 0%, #dc2c2c 100%)",
+      background:
+        "linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%)",
     }}
   >
     <div
       style={{
         width: "40px",
         height: "40px",
-        border: "4px solid rgba(255,255,255,0.3)",
-        borderTop: "4px solid white",
+        border: "4px solid rgba(45, 51, 138, 0.3)",
+        borderTop: "4px solid #2D338A",
         borderRadius: "50%",
         animation: "spin 1s linear infinite",
       }}
