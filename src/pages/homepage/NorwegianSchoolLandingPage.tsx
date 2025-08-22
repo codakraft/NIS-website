@@ -1,18 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./NorwegianSchoolLandingPage.module.css";
 import { NorwegianSchoolHeaderProps } from "../../types/norwegian-school";
 import HeroSection from "../../components/Hero/Hero";
 import Footer from "../../components/Footer";
+import LazyImage from "../../components/LazyImage";
 import {
   TeacherStudentIcon,
-  TeacherStudent2Icon,
   LineIcon,
   OrnamentIcon,
 } from "../../components/Icons";
 import { testimonialsData } from "../../data/siteData";
+import { useOptimizedData, useThrottle } from "../../hooks/usePerformance";
 
-// University logos data
+// Memoized university logos data to prevent recreation on every render
 const universityLogos = [
   {
     name: "Stanford University",
@@ -125,9 +126,16 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
   };
 
   const { targetRef, isIntersecting } = useIntersectionObserver();
-  const count1200 = useCountUp(14566, 2500, isIntersecting);
-  const count100 = useCountUp(100, 2000, isIntersecting);
-  const count95 = useCountUp(100, 1800, isIntersecting);
+
+  // Memoize count calculations to prevent unnecessary recalculations
+  const optimizedCounts = useOptimizedData(
+    {
+      count1: useCountUp(14566, 2500, isIntersecting),
+      count2: useCountUp(100, 2000, isIntersecting),
+      count3: useCountUp(100, 1800, isIntersecting),
+    },
+    [isIntersecting]
+  );
 
   // State for testimonials
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -151,8 +159,8 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
     return () => clearInterval(timer);
   }, []);
 
-  // Handle swipe gestures
-  const handleTouchStart = (e: React.TouchEvent) => {
+  // Optimize touch handlers with throttling
+  const handleTouchStart = useThrottle((e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
 
     if (
@@ -161,11 +169,11 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
       const element = e.currentTarget as HTMLElement;
       element.style.cursor = "grabbing";
     }
-  };
+  }, 16); // ~60fps
 
-  const handleTouchMove = (e: React.TouchEvent) => {
+  const handleTouchMove = useThrottle((e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
-  };
+  }, 16); // ~60fps
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (
@@ -213,9 +221,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
             {/* Left Image */}
             <div className={styles.aboutImageLeft}>
               {/* <TeacherStudent2Icon style={{ width: "100%", height: "100%" }} /> */}
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1755427340/Rectangle_lz3ppx.png"
-                alt="About NIS"
+                alt="About NIS - School building"
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
@@ -258,20 +266,24 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
             <div className={styles.statisticsNumbers}>
               <div className={styles.statistic}>
                 <span className={styles.statisticNumber}>
-                  {count1200.toLocaleString()}+
+                  {optimizedCounts.count1.toLocaleString()}+
                 </span>
                 <span className={styles.statisticLabel}>
                   Enrollments since inception
                 </span>
               </div>
               <div className={styles.statistic}>
-                <span className={styles.statisticNumber}>{count100}%</span>
+                <span className={styles.statisticNumber}>
+                  {optimizedCounts.count2}%
+                </span>
                 <span className={styles.statisticLabel}>
                   Passes into university
                 </span>
               </div>
               <div className={styles.statistic}>
-                <span className={styles.statisticNumber}>{count95}%</span>
+                <span className={styles.statisticNumber}>
+                  {optimizedCounts.count3}%
+                </span>
                 <span className={styles.statisticLabel}>Happy parents</span>
               </div>
             </div>
@@ -351,7 +363,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               {universityLogos.map((university, index) => (
                 <div key={`first-${index}`} className={styles.logoItem}>
                   <div className={styles.logoContent}>
-                    <img
+                    <LazyImage
                       src={university.logo}
                       alt={university.name}
                       className={styles.logoImage}
@@ -363,7 +375,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               {universityLogos.map((university, index) => (
                 <div key={`second-${index}`} className={styles.logoItem}>
                   <div className={styles.logoContent}>
-                    <img
+                    <LazyImage
                       src={university.logo}
                       alt={university.name}
                       className={styles.logoImage}
@@ -391,9 +403,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753061/_OP_9309_fdqvmd.jpg"
-                alt="Smiling student with glasses"
+                alt="Academics - Smiling student with glasses"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -406,9 +418,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753056/_OP_9001_gj0bek.jpg"
-                alt="Smiling student with glasses"
+                alt="Culture - Students in cultural activity"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -420,9 +432,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754754812/_OP_8688_tx5czy.jpg"
-                alt="Smiling student with glasses"
+                alt="Campus - School building exterior"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -443,9 +455,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753053/_OP_8918_xq0twl.jpg"
-                alt="Smiling student with glasses"
+                alt="Sports - Students playing sports"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -457,9 +469,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753060/_OP_9279_indxqb.jpg"
-                alt="Smiling student with glasses"
+                alt="Laboratory - Science laboratory equipment"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -471,9 +483,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753047/_OP_8753_lycn8p.jpg"
-                alt="Smiling student with glasses"
+                alt="Dining - School cafeteria"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -485,9 +497,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
               onClick={handleImageClick}
               style={{ cursor: "pointer" }}
             >
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753045/_OP_8730_gjlxlv.jpg"
-                alt="Smiling student with glasses"
+                alt="Campus - School outdoor area"
                 className={styles.studentImage}
               />
               <div className={styles.categoryOverlay}>
@@ -504,4 +516,5 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
   );
 };
 
-export default NorwegianSchoolLandingPage;
+// Memoize the component to prevent unnecessary re-renders
+export default memo(NorwegianSchoolLandingPage);
