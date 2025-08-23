@@ -43,9 +43,19 @@ const TourHeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
   };
 
   const handleApplyClick = () => {
-    console.log("Apply clicked");
+    console.log("Apply clicked - Opening admission form");
+    window.open(
+      "https://norwegianschool.educare.school/admission-form",
+      "_blank"
+    );
     onApplyClick?.();
   };
+
+  const handleLogoClick = () => {
+    console.log("Logo clicked - Navigating to homepage");
+    navigate("/");
+  };
+
   return (
     <>
       <NavigationMenu
@@ -64,7 +74,7 @@ const TourHeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
             key="hero-video"
           >
             <source
-              src="https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Tour.mp4?alt=media&token=34537726-c142-4e8c-a194-064ca15cec98"
+              src="https://res.cloudinary.com/dgslbycvk/video/upload/v1755927226/0822_1_xhhilr.mov"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -87,7 +97,19 @@ const TourHeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
           {/* Logo and Action Buttons Container */}
           <div className={styles.rightSection}>
             {/* Logo */}
-            <div className={styles.logoContainer}>
+            <div
+              className={styles.logoContainer}
+              onClick={handleLogoClick}
+              style={{ cursor: "pointer" }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  handleLogoClick();
+                }
+              }}
+              aria-label="Navigate to homepage"
+            >
               <img
                 src={Logo}
                 alt="Norwegian International School Logo"

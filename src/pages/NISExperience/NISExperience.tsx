@@ -178,7 +178,10 @@ const Admission: React.FC = () => {
                 <br />
                 spaces.
               </p>
-              <button className={styles.takeATourButton}>
+              <button
+                className={styles.takeATourButton}
+                onClick={handleTakeATourClick}
+              >
                 Take a Tour
                 <ArrowUpIconComponent
                   style={{ width: "16px", height: "16px" }}

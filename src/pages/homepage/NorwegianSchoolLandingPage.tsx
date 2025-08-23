@@ -153,6 +153,11 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
     onApplyClick?.();
   };
 
+  const handleLearnMoreClick = () => {
+    console.log("Learn More clicked - Navigating to About page");
+    navigate("/about");
+  };
+
   const { targetRef, isIntersecting } = useIntersectionObserver();
 
   // Memoize count calculations to prevent unnecessary recalculations
@@ -271,7 +276,10 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
                   innovation, we equip our pupils with the ability to be
                   well-balanced citizens and leaders of the world.
                 </p>
-                <button className={styles.learnMoreButton}>
+                <button
+                  className={styles.learnMoreButton}
+                  onClick={handleLearnMoreClick}
+                >
                   Learn More <span className={styles.buttonArrow}>→</span>
                 </button>
               </div>

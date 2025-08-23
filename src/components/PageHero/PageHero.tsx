@@ -55,6 +55,10 @@ const PageHero: React.FC<PageHeroProps> = ({
 
   const handleApplyClick = () => {
     console.log("Apply clicked");
+    window.open(
+      "https://norwegianschool.educare.school/admission-form",
+      "_blank"
+    );
     onApplyClick?.();
   };
 
