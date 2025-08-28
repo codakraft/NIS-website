@@ -37,4 +37,5 @@ export {
   SubjectIcon4Component,
   SubjectIcon5Component,
   SubjectIcon6Component,
+  YouTubeIconComponent,
 } from "./Icons";

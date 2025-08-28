@@ -7,8 +7,8 @@ import {
   PhoneIconComponent,
   FacebookIconComponent,
   TwitterIconComponent,
-  LinkedInIconComponent,
   InstagramIconComponent,
+  YouTubeIconComponent,
 } from "../Icons";
 
 const Footer: React.FC = () => {
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               style={{ width: "24px", height: "24px", marginRight: 8 }}
             />
             <div className={styles.addressText}>
-              Portharcourt,
+              11 Rotimi Amaechi Drive GRA Phase 3,
               <br />
               Rivers State, Nigeria
             </div>
@@ -52,9 +52,9 @@ const Footer: React.FC = () => {
             }}
           />
           <div className={styles.footerEmails}>
-            <p>admissions@nis-edu.com</p>
-            <p>schooladmin@nisng.com</p>
-            <p>careers@nis-edu.com</p>
+            <p>schooladmin@norwegianinternationalschools.com</p>
+            <p>admissions@norwegianinternationalschools.com</p>
+            <p>careers@norwegianinternationalschools.com</p>
             <p>Virtual Classroom</p>
             <p>Peer Learning</p>
           </div>
@@ -70,20 +70,48 @@ const Footer: React.FC = () => {
             }}
           />
           <div className={styles.socialLinks}>
-            <button className={styles.socialLink} aria-label="Twitter">
+            <button
+              className={styles.socialLink}
+              aria-label="Twitter"
+              onClick={() =>
+                window.open("https://x.com/nisngPHC?mx=2", "_blank")
+              }
+            >
               <TwitterIconComponent style={{ width: "24px", height: "24px" }} />
             </button>
-            <button className={styles.socialLink} aria-label="LinkedIn">
-              <LinkedInIconComponent
-                style={{ width: "24px", height: "24px" }}
-              />
+            <button
+              className={styles.socialLink}
+              aria-label="YouTube"
+              onClick={() =>
+                window.open(
+                  "https://www.youtube.com/watch?v=nc2kiHuoQxc&feature=youtu.be",
+                  "_blank"
+                )
+              }
+            >
+              <YouTubeIconComponent style={{ width: "24px", height: "24px" }} />
             </button>
-            <button className={styles.socialLink} aria-label="Instagram">
+            <button
+              className={styles.socialLink}
+              aria-label="Instagram"
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/norwegianinternationalschool/",
+                  "_blank"
+                )
+              }
+            >
               <InstagramIconComponent
                 style={{ width: "24px", height: "24px" }}
               />
             </button>
-            <button className={styles.socialLink} aria-label="Facebook">
+            <button
+              className={styles.socialLink}
+              aria-label="Facebook"
+              onClick={() =>
+                window.open("https://www.facebook.com/NISPHC", "_blank")
+              }
+            >
               <FacebookIconComponent
                 style={{ width: "24px", height: "24px" }}
               />

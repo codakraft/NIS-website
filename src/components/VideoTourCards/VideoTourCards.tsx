@@ -99,7 +99,12 @@ const VideoTourCards: React.FC = () => {
               className={styles.videoPlayerModal}
               onClick={(e) => e.stopPropagation()}
             >
-              <video controls autoPlay className={styles.videoPlayer}>
+              <video
+                controls
+                autoPlay
+                className={styles.videoPlayer}
+                preload="metadata"
+              >
                 <source src={activeVideo.videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

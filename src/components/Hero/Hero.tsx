@@ -15,19 +15,44 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  // Lazy load video after initial render
+  // Lazy load video after initial render and when in viewport
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowVideo(true);
-    }, 100); // Small delay to allow page to render first
+      // Check if container is in viewport before loading video
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            console.log(
+              "Hero section visibility:",
+              entry.isIntersecting,
+              "intersection ratio:",
+              entry.intersectionRatio
+            );
+            if (entry.isIntersecting) {
+              console.log("Hero section is now visible, loading video...");
+              setShowVideo(true);
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleVideoLoad = () => {
-    console.log("Video loaded successfully");
+    console.log("Video loaded successfully and is now playing");
   };
 
   const handleVideoError = () => {
@@ -73,7 +98,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
         onNavigate={handleNavigate}
       />
       <section className={styles.heroSection}>
-        <div className={styles.heroBackground}>
+        <div ref={containerRef} className={styles.heroBackground}>
           {/* Lazy-loaded video */}
           {showVideo && (
             <video
@@ -85,14 +110,23 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
               className={styles.heroImage}
               onLoadedData={handleVideoLoad}
               onError={handleVideoError}
-              preload="none"
+              preload="metadata"
+              poster="https://res.cloudinary.com/dgslbycvk/image/upload/v1756418814/0822_poster.jpg"
             >
               <source
-                src="https://res.cloudinary.com/dgslbycvk/video/upload/v1755888196/HomePageVideo_lfwpu9.mov"
+                src="https://res.cloudinary.com/dgslbycvk/video/upload/v1756418814/0822_bct6oy.mov"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
+          )}
+          {/* Poster image fallback */}
+          {!showVideo && (
+            <img
+              src="https://res.cloudinary.com/dgslbycvk/image/upload/v1754753045/_OP_8730_gjlxlv.jpg"
+              alt="Norwegian International School"
+              className={styles.heroImage}
+            />
           )}
           <div className={styles.heroOverlay}></div>
         </div>
