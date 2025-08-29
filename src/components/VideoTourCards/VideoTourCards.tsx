@@ -13,25 +13,25 @@ const videoCards: VideoCard[] = [
     id: 1,
     title: "NIS Primary School",
     thumbnail:
-      "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753050/_OP_8859_htwgyz.jpg",
+      "https://res.cloudinary.com/dgslbycvk/image/upload/v1755381277/WhatsApp_Image_2025-08-12_at_5.12.23_PM_dbkzf8.jpg",
     videoUrl:
-      "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Tour.mp4?alt=media&token=34537726-c142-4e8c-a194-064ca15cec98",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756501798/primary_rdwa6s.mov",
   },
   {
     id: 2,
     title: "NIS Secondary School",
     thumbnail:
-      "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753050/_OP_8857_ha80da.jpg",
+      "https://res.cloudinary.com/dgslbycvk/image/upload/v1755381218/_OP_9121_tw6gfo.jpg",
     videoUrl:
-      "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Tour.mp4?alt=media&token=34537726-c142-4e8c-a194-064ca15cec98",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756504806/secondary_yrj6ax.mov",
   },
   {
     id: 3,
     title: "NIS Hostel",
     thumbnail:
-      "https://res.cloudinary.com/dgslbycvk/image/upload/v1754753045/_OP_8751_kymx7t.jpg",
+      "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/_OP_8583.jpg?alt=media&token=66a6db7f-3e84-421d-9fec-cab2d6c8fc91",
     videoUrl:
-      "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/Tour.mp4?alt=media&token=34537726-c142-4e8c-a194-064ca15cec98",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756505275/hostel_pmbxy8.mov",
   },
 ];
 
@@ -49,14 +49,14 @@ const VideoTourCards: React.FC = () => {
   return (
     <section className={styles.videoTourSection}>
       <div className={styles.container}>
-        <div className={styles.cardsStack}>
+        <div className={styles.videoGrid}>
           {videoCards.map((card, index) => (
             <div
               key={card.id}
               className={`${styles.videoCard} ${styles[`card${index + 1}`]}`}
-              style={{ zIndex: videoCards.length - index }}
             >
               <div className={styles.cardContent}>
+                <div className={styles.cardGlow}></div>
                 <img
                   src={card.thumbnail}
                   alt={card.title}
@@ -84,6 +84,11 @@ const VideoTourCards: React.FC = () => {
                     </div>
                   </button>
                   <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <div className={styles.cardDescription}>
+                    {index === 0 && "Explore our primary education facilities"}
+                    {index === 1 && "Discover our secondary school excellence"}
+                    {index === 2 && "Experience our comfortable hostel life"}
+                  </div>
                 </div>
               </div>
             </div>

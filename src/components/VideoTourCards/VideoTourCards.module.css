@@ -1,9 +1,23 @@
 /* Video Tour Cards Component Styles */
 .videoTourSection {
-  padding: 20px 0;
-  /* background: linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%); */
+  padding: 80px 0;
+  /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%); */
   font-family: 'Effra', sans-serif;
-  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.videoTourSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: 
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%); */
+  pointer-events: none;
 }
 
 .container {
@@ -11,65 +25,115 @@
   margin: 0 auto;
   padding: 0 60px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* Cards Stack Container */
-.cardsStack {
-  position: relative;
-  width: 800px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Video Grid Container */
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Individual Video Card */
 .videoCard {
-  position: absolute;
-  width: 700px;
-  height: 400px;
-  border-radius: 20px;
+  position: relative;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  transform: translateY(0);
 }
 
 .videoCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.15),
+    0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Positioning - Left to Right Stack */
-.card1 {
-  transform: translateX(-120px) translateY(0px);
-  z-index: 3;
+.videoCard:nth-child(1) {
+  animation-delay: 0.1s;
 }
 
-.card2 {
-  transform: translateX(-60px) translateY(30px);
-  z-index: 2;
+.videoCard:nth-child(2) {
+  animation-delay: 0.2s;
 }
 
-.card3 {
-  transform: translateX(0px) translateY(60px);
-  z-index: 1;
+.videoCard:nth-child(3) {
+  animation-delay: 0.3s;
 }
 
 /* Card Content */
 .cardContent {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.cardGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(168, 85, 247, 0.1) 50%, 
+    rgba(236, 72, 153, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.videoCard:hover .cardGlow {
+  opacity: 1;
 }
 
 .cardImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.videoCard:hover .cardImage {
+  transform: scale(1.1);
+}
+
+/* Card Number */
+.cardNumber {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.videoCard:hover .cardNumber {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Overlay */
@@ -80,8 +144,9 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(
-    180deg,
+    135deg,
     rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0.7) 100%
   );
   display: flex;
@@ -89,12 +154,25 @@
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.videoCard:hover .overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 /* Play Button */
 .playButton {
   background: rgba(255, 255, 255, 0.2);
-  border: 3px solid rgba(255, 255, 255, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -102,15 +180,36 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.playButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+}
+
+.playButton:hover::before {
+  width: 120px;
+  height: 120px;
 }
 
 .playButton:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: white;
   transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
 }
 
 .playIcon {
@@ -118,17 +217,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 /* Card Title */
 .cardTitle {
   font-family: 'Effra', sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 0;
-  text-align: center;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
+  z-index: 1;
+}
+
+/* Card Description */
+.cardDescription {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1.4;
+  max-width: 250px;
+  z-index: 1;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.videoCard:hover .cardDescription {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Video Player Overlay */
@@ -138,67 +255,97 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Video Player Modal */
 .videoPlayerModal {
-  background: #111;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 20px;
   padding: 24px 24px 16px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
   position: relative;
   max-width: 90vw;
   max-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .videoPlayer {
   width: 70vw;
   max-width: 700px;
   max-height: 60vh;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* Close Button */
 .closeButton {
   position: absolute;
-  top: 8px;
-  right: 16px;
-  background: transparent;
+  top: 16px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
   z-index: 2;
-  padding: 0 8px;
+  padding: 8px 12px;
   line-height: 1;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
 @media (max-width: 1200px) {
   .container {
     padding: 0 40px;
   }
   
-  .cardsStack {
-    width: 700px;
-    height: 500px;
+  .videoGrid {
+    gap: 30px;
+    padding: 0 15px;
   }
   
-  .videoCard {
-    width: 600px;
-    height: 350px;
+  .cardContent {
+    height: 260px;
   }
   
   .cardTitle {
-    font-size: 28px;
+    font-size: 24px;
   }
   
   .playButton {
@@ -216,164 +363,115 @@
     padding: 0 30px;
   }
   
-  .cardsStack {
-    width: 600px;
-    height: 450px;
+  .videoGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
   }
   
-  .videoCard {
-    width: 500px;
-    height: 300px;
-  }
-  
-  .card1 {
-    transform: translateX(-80px) translateY(0px);
-  }
-  
-  .card2 {
-    transform: translateX(-40px) translateY(25px);
-  }
-  
-  .card3 {
-    transform: translateX(0px) translateY(50px);
+  .cardContent {
+    height: 240px;
   }
   
   .cardTitle {
-    font-size: 24px;
+    font-size: 22px;
   }
   
   .playButton {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     margin-bottom: 15px;
+  }
+  
+  .cardDescription {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 768px) {
   .videoTourSection {
     padding: 50px 0;
-    min-height: 500px;
   }
 
   .container {
     padding: 0 20px;
-    max-width: 100%;
   }
   
-  .cardsStack {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .videoCard {
-    position: relative !important;
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    border-radius: 15px;
-    margin-bottom: 0;
-    left: 0;
-    top: 0;
-    transform: none !important;
-  }
-
-  .card1 {
-    transform: none !important;
-    position: relative !important;
+  .videoGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 400px;
   }
   
-  .card2 {
-    transform: none !important;
-    position: relative !important;
+  .cardContent {
+    height: 220px;
   }
   
-  .card3 {
-    transform: none !important;
-    position: relative !important;
-  }  .cardTitle {
+  .cardTitle {
     font-size: 20px;
   }
   
   .playButton {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 12px;
   }
   
-  .playIcon svg {
-    width: 18px;
-    height: 20px;
+  .cardNumber {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .cardDescription {
+    font-size: 12px;
+    max-width: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .videoTourSection {
     padding: 40px 0;
-    min-height: 450px;
   }
 
   .container {
     padding: 0 15px;
-    max-width: 100%;
   }
   
-  .cardsStack {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  .videoGrid {
+    gap: 15px;
+    max-width: 350px;
   }
   
-  .videoCard {
-    position: relative !important;
-    width: 100%;
-    max-width: 260px;
-    height: 180px;
-    border-radius: 12px;
-    margin-bottom: 0;
-    left: 0;
-    top: 0;
-    transform: none !important;
-  }
-
-  .card1 {
-    transform: none !important;
-    position: relative !important;
+  .cardContent {
+    height: 200px;
   }
   
-  .card2 {
-    transform: none !important;
-    position: relative !important;
-  }
-  
-  .card3 {
-    transform: none !important;
-    position: relative !important;
-  }  .cardTitle {
+  .cardTitle {
     font-size: 18px;
   }
   
   .playButton {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     margin-bottom: 10px;
     border-width: 2px;
   }
   
-  .playIcon svg {
-    width: 16px;
-    height: 18px;
+  .cardNumber {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .cardDescription {
+    font-size: 11px;
+    max-width: 180px;
+  }
+  
+  .videoPlayer {
+    width: 85vw;
+    max-height: 50vh;
   }
 }
