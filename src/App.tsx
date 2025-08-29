@@ -14,43 +14,43 @@ const Contact = lazy(() => import("./pages/Contact"));
 const VirtualTour = lazy(() => import("./pages/Tour/Tour"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 
-// Loading fallback component
-const LoadingSpinner = () => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      background:
-        "linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%)",
-    }}
-  >
-    <div
-      style={{
-        width: "40px",
-        height: "40px",
-        border: "4px solid rgba(45, 51, 138, 0.3)",
-        borderTop: "4px solid #2D338A",
-        borderRadius: "50%",
-        animation: "spin 1s linear infinite",
-      }}
-    ></div>
-    <style>
-      {`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}
-    </style>
-  </div>
-);
+// Loading fallback component - removed for faster perceived loading
+// const LoadingSpinner = () => (
+//   <div
+//     style={{
+//       display: "flex",
+//       justifyContent: "center",
+//       alignItems: "center",
+//       height: "100vh",
+//       background:
+//         "linear-gradient(180deg, rgb(238, 244, 248) 0%, rgb(180, 229, 253) 100%)",
+//     }}
+//   >
+//     <div
+//       style={{
+//         width: "40px",
+//         height: "40px",
+//         border: "4px solid rgba(45, 51, 138, 0.3)",
+//         borderTop: "4px solid #2D338A",
+//         borderRadius: "50%",
+//         animation: "spin 1s linear infinite",
+//       }}
+//     ></div>
+//     <style>
+//       {`
+//         @keyframes spin {
+//           0% { transform: rotate(0deg); }
+//           100% { transform: rotate(360deg); }
+//         }
+//       `}
+//     </style>
+//   </div>
+// );
 
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<LoadingSpinner />}>
+      <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<NorwegianSchoolLandingPage />} />
           <Route path="/about" element={<About />} />

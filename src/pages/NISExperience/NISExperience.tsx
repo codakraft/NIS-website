@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./NISExperience.module.css";
 import PageHero from "../../components/PageHero";
 import Footer from "../../components/Footer";
-import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
+import { PUBLIC_ASSETS } from "../../constants/assets";
+// import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
 import {
   ArrowUpIconComponent,
   ArrowUpWhiteIconComponent,
@@ -45,7 +46,7 @@ const Admission: React.FC = () => {
     };
     img.onerror = () => {
       console.error("Failed to load Firebase image, using fallback");
-      setBackgroundImage(aboutUsHeroImage);
+      setBackgroundImage(PUBLIC_ASSETS.icons.aboutUsHero);
     };
     img.src = firebaseImageUrl;
   }, []);

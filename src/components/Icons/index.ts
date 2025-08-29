@@ -4,7 +4,6 @@ export {
   LogoIcon,
   LineIcon,
   TeacherStudentIcon,
-  TeacherStudent2Icon,
   OrnamentIcon,
   Nis1Icon,
   Nis2Icon,

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./About.module.css";
 import PageHero from "../../components/PageHero";
 import Footer from "../../components/Footer";
-import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
+import { PUBLIC_ASSETS } from "../../constants/assets";
 import {
   CommentIconComponent,
   MissionIconComponent,
@@ -36,7 +36,7 @@ const About: React.FC = () => {
     <div className={styles.aboutPage}>
       {/* Page Hero Section */}
       <PageHero
-        backgroundImage={aboutUsHeroImage}
+        backgroundImage={PUBLIC_ASSETS.icons.aboutUsHero}
         title="What Sets Us Apart"
         subtitle="ABOUT NIS"
         onMenuClick={handleMenuClick}

@@ -3,13 +3,6 @@ import { ReactComponent as ArrowSvg } from "../../assets/icons/arrow.svg";
 import { ReactComponent as MenuSvg } from "../../assets/icons/menu.svg";
 import { ReactComponent as LogoSvg } from "../../assets/icons/logo.svg";
 import { ReactComponent as LineSvg } from "../../assets/icons/Line.svg";
-import { ReactComponent as TeacherStudentSvg } from "../../assets/icons/teacher-student.svg";
-import { ReactComponent as TeacherStudent2Svg } from "../../assets/icons/teacher-student2.svg";
-import { ReactComponent as Ornament } from "../../assets/icons/Ornament.svg";
-import { ReactComponent as Nis1Svg } from "../../assets/icons/nis1.svg";
-import { ReactComponent as Nis2Svg } from "../../assets/icons/nis2.svg";
-import { ReactComponent as Nis3Svg } from "../../assets/icons/nis3.svg";
-import { ReactComponent as Nis4Svg } from "../../assets/icons/nis4.svg";
 import { ReactComponent as FooterLine } from "../../assets/icons/footerLine.svg";
 import { ReactComponent as LocationIcon } from "../../assets/icons/Location Icon.svg";
 import { ReactComponent as PhoneIcon } from "../../assets/icons/Phone Icon.svg";
@@ -18,7 +11,6 @@ import { ReactComponent as TwitterIcon } from "../../assets/icons/twitter.svg";
 import { ReactComponent as LinkedInIcon } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as InstagramIcon } from "../../assets/icons/instagram.svg";
 import { ReactComponent as LogoTransparent } from "../../assets/icons/LogoTrans.svg";
-import { ReactComponent as aboutUsHero } from "../../assets/icons/aboutUsHero.svg";
 import { ReactComponent as CommentIcon } from "../../assets/icons/commentIcon.svg";
 import { ReactComponent as MissionIcon } from "../../assets/icons/mission.svg";
 import { ReactComponent as VisionIcon } from "../../assets/icons/vision.svg";
@@ -42,13 +34,53 @@ export const ArrowIcon = createIcon(ArrowSvg);
 export const MenuIcon = createIcon(MenuSvg);
 export const LogoIcon = createIcon(LogoSvg);
 export const LineIcon = createIcon(LineSvg);
-export const TeacherStudentIcon = createIcon(TeacherStudentSvg);
-export const TeacherStudent2Icon = createIcon(TeacherStudent2Svg);
-export const OrnamentIcon = createIcon(Ornament);
-export const Nis1Icon = createIcon(Nis1Svg);
-export const Nis2Icon = createIcon(Nis2Svg);
-export const Nis3Icon = createIcon(Nis3Svg);
-export const Nis4Icon = createIcon(Nis4Svg);
+export const TeacherStudentIcon = (props: any) => (
+  <img
+    src="/assets/icons/teacher-student.svg"
+    alt="Teacher Student"
+    {...props}
+  />
+);
+
+export const OrnamentIcon = (props: any) => (
+  <img
+    src="/assets/icons/Ornament.svg"
+    alt="Ornament"
+    {...props}
+  />
+);
+
+export const Nis1Icon = (props: any) => (
+  <img
+    src="/assets/icons/nis1.svg"
+    alt="NIS 1"
+    {...props}
+  />
+);
+
+export const Nis2Icon = (props: any) => (
+  <img
+    src="/assets/icons/nis2.svg"
+    alt="NIS 2"
+    {...props}
+  />
+);
+
+export const Nis3Icon = (props: any) => (
+  <img
+    src="/assets/icons/nis3.svg"
+    alt="NIS 3"
+    {...props}
+  />
+);
+
+export const Nis4Icon = (props: any) => (
+  <img
+    src="/assets/icons/nis4.svg"
+    alt="NIS 4"
+    {...props}
+  />
+);
 export const FooterLineIcon = createIcon(FooterLine);
 export const LocationIconComponent = createIcon(LocationIcon);
 export const PhoneIconComponent = createIcon(PhoneIcon);
@@ -57,7 +89,13 @@ export const TwitterIconComponent = createIcon(TwitterIcon);
 export const LinkedInIconComponent = createIcon(LinkedInIcon);
 export const InstagramIconComponent = createIcon(InstagramIcon);
 export const LogoTransparentIcon = createIcon(LogoTransparent);
-export const AboutUsHeroIcon = createIcon(aboutUsHero);
+export const AboutUsHeroIcon = (props: any) => (
+  <img
+    src="/assets/icons/aboutUsHero.svg"
+    alt="About Us Hero"
+    {...props}
+  />
+);
 export const CommentIconComponent = createIcon(CommentIcon);
 export const MissionIconComponent = createIcon(MissionIcon);
 export const VisionIconComponent = createIcon(VisionIcon);

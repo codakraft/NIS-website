@@ -7,7 +7,7 @@ import ContactSection from "../../components/ContactSection/ContactSection";
 import MapSection from "../../components/MapSection/MapSection";
 import FaqSection from "../../components/FaqSection/FaqSection";
 import CtaBanner from "../../components/CtaBanner/CtaBanner";
-import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
+import { PUBLIC_ASSETS } from "../../constants/assets";
 
 const Contact: React.FC = () => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
     };
     img.onerror = () => {
       console.error("Failed to load Firebase image, using fallback");
-      setBackgroundImage(aboutUsHeroImage);
+      setBackgroundImage(PUBLIC_ASSETS.icons.aboutUsHero);
     };
     img.src = firebaseImageUrl;
   }, []);

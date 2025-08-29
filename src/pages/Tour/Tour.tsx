@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Tour.module.css";
 import PageHero from "../../components/PageHero";
 import Footer from "../../components/Footer";
-import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
+// import aboutUsHeroImage from "../../assets/icons/aboutUsHero.svg";
 import {
   ArrowUpIconComponent,
   ArrowUpWhiteIconComponent,

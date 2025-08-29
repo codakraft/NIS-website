@@ -6,7 +6,6 @@ import HeroSection from "../../components/Hero/Hero";
 import Footer from "../../components/Footer";
 import {
   TeacherStudentIcon,
-  TeacherStudent2Icon,
   LineIcon,
   OrnamentIcon,
   Nis1Icon,
@@ -216,7 +215,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
           <div className={styles.aboutRow}>
             {/* Left Image */}
             <div className={styles.aboutImageLeft}>
-              <TeacherStudent2Icon style={{ width: "100%", height: "100%" }} />
+              {/* <TeacherStudentIcon style={{ width: "100%", height: "100%" }} /> */}
             </div>
 
             {/* Right Side: Image and Text */}
