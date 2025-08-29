@@ -2,11 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "create-react-app",
-  "functions": {
-    "src/pages/**/*.js": {
-      "maxDuration": 10
-    }
-  },
   "headers": [
     {
       "source": "/static/(.*)",
@@ -46,7 +41,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/((?!static/).*)",
       "destination": "/index.html"
     }
   ],

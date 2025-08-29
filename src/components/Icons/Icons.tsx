@@ -43,43 +43,23 @@ export const TeacherStudentIcon = (props: any) => (
 );
 
 export const OrnamentIcon = (props: any) => (
-  <img
-    src="/assets/icons/Ornament.svg"
-    alt="Ornament"
-    {...props}
-  />
+  <img src="/assets/icons/Ornament.svg" alt="Ornament" {...props} />
 );
 
 export const Nis1Icon = (props: any) => (
-  <img
-    src="/assets/icons/nis1.svg"
-    alt="NIS 1"
-    {...props}
-  />
+  <img src="/assets/icons/nis1.svg" alt="NIS 1" {...props} />
 );
 
 export const Nis2Icon = (props: any) => (
-  <img
-    src="/assets/icons/nis2.svg"
-    alt="NIS 2"
-    {...props}
-  />
+  <img src="/assets/icons/nis2.svg" alt="NIS 2" {...props} />
 );
 
 export const Nis3Icon = (props: any) => (
-  <img
-    src="/assets/icons/nis3.svg"
-    alt="NIS 3"
-    {...props}
-  />
+  <img src="/assets/icons/nis3.svg" alt="NIS 3" {...props} />
 );
 
 export const Nis4Icon = (props: any) => (
-  <img
-    src="/assets/icons/nis4.svg"
-    alt="NIS 4"
-    {...props}
-  />
+  <img src="/assets/icons/nis4.svg" alt="NIS 4" {...props} />
 );
 export const FooterLineIcon = createIcon(FooterLine);
 export const LocationIconComponent = createIcon(LocationIcon);
@@ -90,11 +70,7 @@ export const LinkedInIconComponent = createIcon(LinkedInIcon);
 export const InstagramIconComponent = createIcon(InstagramIcon);
 export const LogoTransparentIcon = createIcon(LogoTransparent);
 export const AboutUsHeroIcon = (props: any) => (
-  <img
-    src="/assets/icons/aboutUsHero.svg"
-    alt="About Us Hero"
-    {...props}
-  />
+  <img src="/assets/icons/aboutUsHero.svg" alt="About Us Hero" {...props} />
 );
 export const CommentIconComponent = createIcon(CommentIcon);
 export const MissionIconComponent = createIcon(MissionIcon);
