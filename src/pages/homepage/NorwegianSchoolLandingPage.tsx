@@ -294,8 +294,9 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
           <div className={styles.statisticsLeft}>
             <h2 className={styles.statisticsTitle}>Numbers Don't Lie</h2>
             <p className={styles.statisticsDescription}>
-              Norwegian International School has over 40 years of experience
-              providing top-quality international education in Port Harcourt.
+              For over 40 years, NIS has been more than a school, it’s been a
+              launchpad. From early learners to global citizens, the numbers
+              reflect our commitment: generations shaped, futures secured.
             </p>
 
             <LineIcon className={styles.divider} />
