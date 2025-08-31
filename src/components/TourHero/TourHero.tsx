@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HeroSection.module.css";
 import { NorwegianSchoolHeaderProps } from "../../types/norwegian-school";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/NISLogo_transcropped.png";
 import chevronRIght from "../../assets/chevron-right.png";
 import NavigationMenu from "../NavigationMenu";
 

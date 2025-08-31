@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HeroSection.module.css";
 import { NorwegianSchoolHeaderProps } from "../../types/norwegian-school";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/NISLogo_transcropped.png";
 import chevronRIght from "../../assets/chevron-right.png";
 import NavigationMenu from "../NavigationMenu";
 
@@ -114,7 +114,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
               poster="https://res.cloudinary.com/dgslbycvk/image/upload/v1756418814/0822_poster.jpg"
             >
               <source
-                src="https://res.cloudinary.com/dgslbycvk/video/upload/v1756418814/0822_bct6oy.mov"
+                src="https://res.cloudinary.com/dgslbycvk/video/upload/v1756575122/HomePageW_OLogo_qh4fbf.mov"
                 type="video/mp4"
               />
               Your browser does not support the video tag.

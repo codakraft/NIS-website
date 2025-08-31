@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PageHero.module.css";
 import NavigationMenu from "../NavigationMenu";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/NISLogo_transcropped.png";
 import chevronRight from "../../assets/chevron-right.png";
 
 interface PageHeroProps {
