@@ -74,7 +74,7 @@ const TourHeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
             key="hero-video"
           >
             <source
-              src="https://res.cloudinary.com/dgslbycvk/video/upload/v1755927226/0822_1_xhhilr.mov"
+              src="https://res.cloudinary.com/dgslbycvk/video/upload/v1756766486/TourPage_njkzhc.mov"
               type="video/mp4"
             />
             Your browser does not support the video tag.

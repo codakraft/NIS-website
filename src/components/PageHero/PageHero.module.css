@@ -106,7 +106,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .actionButton {
@@ -126,6 +126,7 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 8px rgba(220, 104, 104, 0.2);
+  text-align: left;
 }
 
 .actionButton:hover {
@@ -278,7 +279,7 @@
   
   .logo {
     width: 70px;
-    height: 70px;
+    height: 30px;
   }
   
   .actionButtons {
@@ -288,7 +289,7 @@
   .actionButton {
     padding: 6px 12px;
     font-size: 10px;
-    width: 70px;
+    width: 80px;
   }
   
   .actionButton img {

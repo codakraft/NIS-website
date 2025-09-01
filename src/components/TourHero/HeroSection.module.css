@@ -179,6 +179,7 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 8px rgba(220, 104, 104, 0.2);
+  text-align: left;
 }
 
 .actionButton:hover {
@@ -730,7 +731,7 @@
 
   .logo {
     width: 60px;
-    height: 60px;
+    height: 30px;
   }
 
   /* Override: Match action buttons to logo width on mobile */
