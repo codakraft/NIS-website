@@ -14,6 +14,10 @@ const Contact = lazy(() => import("./pages/Contact"));
 const VirtualTour = lazy(() => import("./pages/Tour/Tour"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 
+// Admin components
+const AdminLogin = lazy(() => import("./pages/Admin/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
+
 // Loading fallback component - removed for faster perceived loading
 // const LoadingSpinner = () => (
 //   <div
@@ -60,6 +64,9 @@ function App() {
           <Route path="/tour" element={<VirtualTour />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
       </Suspense>
     </div>
