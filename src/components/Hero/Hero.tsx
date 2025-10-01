@@ -204,7 +204,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
             Welcome to
             <br />
             <span className={styles.heroSchoolName}>
-              Norwegian Int'l School
+              Norwegian International School
             </span>
           </h1>
         </div>

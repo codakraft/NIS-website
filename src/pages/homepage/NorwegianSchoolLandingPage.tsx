@@ -45,6 +45,18 @@ const universityLogos = [
     name: "University of Cambridge",
     logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/UniversityOfCambridgeLogo-1.png",
   },
+  {
+    name: "Columbia University",
+    logo: "https://res.cloudinary.com/dgslbycvk/image/upload/v1757006936/columbia_p4hcxu.jpg",
+  },
+  {
+    name: "Barnard College",
+    logo: "https://res.cloudinary.com/dgslbycvk/image/upload/v1757006935/barnard_college_wr9hsh.jpg",
+  },
+  {
+    name: "University of Birmingham",
+    logo: "https://res.cloudinary.com/dgslbycvk/image/upload/v1757006935/UBirmi_kjmlwv.png",
+  },
 ];
 
 // Custom hook for count-up animation
@@ -327,6 +339,89 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
           </div>
           <div className={styles.statisticsRight}>
             <OrnamentIcon style={{ width: "100%", height: "100%" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* Head of School Section */}
+      <section className={styles.headOfSchoolSection}>
+        <div className={styles.headOfSchoolContainer}>
+          <div className={styles.headOfSchoolContent}>
+            {/* Left Column - Image */}
+            <div className={styles.headOfSchoolImageWrapper}>
+              <div className={styles.headOfSchoolImageContainer}>
+                <LazyImage
+                  src="https://res.cloudinary.com/dgslbycvk/image/upload/v1759332443/head_of_school_o2vrbv.png"
+                  alt="David Roantree - Acting Head of School"
+                  className={styles.headOfSchoolImage}
+                />
+                <div className={styles.headOfSchoolImageOverlay}>
+                  <div className={styles.headOfSchoolTag}>HEAD OF SCHOOL</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Message */}
+            <div className={styles.headOfSchoolMessage}>
+              <div className={styles.headOfSchoolHeader}>
+                <h2 className={styles.headOfSchoolTitle}>
+                  A Message from Our Head of School
+                </h2>
+                <div className={styles.headOfSchoolDecoration}></div>
+              </div>
+
+              <div className={styles.headOfSchoolText}>
+                <p>
+                  At NIS, every student is inspired to achieve their very best.
+                  Our commitment is to provide an education that combines
+                  academic excellence with genuine care, ensuring that children
+                  are not only challenged but also supported every step of the
+                  way. We believe a school should be a place where parents see
+                  their highest hopes for their children come to life: a safe,
+                  caring environment that also challenges them to aim higher and
+                  reach further.
+                </p>
+
+                <p>
+                  As an international school, NIS combines global standards with
+                  a strong sense of community. Our diverse environment reflects
+                  the world our students will go on to shape; preparing them
+                  with the knowledge, values, and resilience needed to succeed
+                  anywhere. With teachers experienced across continents,
+                  internationally benchmarked curriculum standards, and a
+                  culture that celebrates both academic excellence and personal
+                  growth, we are equipping young people not just for
+                  examinations, but for life.
+                </p>
+
+                <p>
+                  What makes NIS truly special is its spirit. Our students learn
+                  in an environment where diversity is celebrated, individuality
+                  is embraced, and every child is known and valued. Beyond the
+                  classroom, opportunities in arts, sports, culture, and service
+                  ensure that children discover their talents, build confidence,
+                  and develop into compassionate, well-rounded individuals ready
+                  to make a difference in the world.
+                </p>
+
+                <p>
+                  The task before us is a shared one. Parents, staff, and
+                  community partners all play a vital role in creating the
+                  future we want for our children. At NIS, we are committed to
+                  working with all our stakeholders to expand opportunities,
+                  strengthen our impact, and make this school a model of what
+                  international education can achieve in Nigeria and beyond.
+                  Together, we have the chance to build something extraordinary,
+                  for our students today, and for the generations that will
+                  follow.
+                </p>
+              </div>
+
+              <div className={styles.headOfSchoolSignature}>
+                <p className={styles.signatureName}>David Roantree</p>
+                <p className={styles.signatureTitle}>Acting Head of School</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

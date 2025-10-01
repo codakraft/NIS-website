@@ -15,7 +15,7 @@ const videoCards: VideoCard[] = [
     thumbnail:
       "https://res.cloudinary.com/dgslbycvk/image/upload/v1755381277/WhatsApp_Image_2025-08-12_at_5.12.23_PM_dbkzf8.jpg",
     videoUrl:
-      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756501798/primary_rdwa6s.mov",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756992738/Primary_vrrmhx.mov",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const videoCards: VideoCard[] = [
     thumbnail:
       "https://res.cloudinary.com/dgslbycvk/image/upload/v1755381218/_OP_9121_tw6gfo.jpg",
     videoUrl:
-      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756504806/secondary_yrj6ax.mov",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756992735/SecondarySchool_qaude8.mov",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const videoCards: VideoCard[] = [
     thumbnail:
       "https://firebasestorage.googleapis.com/v0/b/nis-website-6e576.firebasestorage.app/o/_OP_8583.jpg?alt=media&token=66a6db7f-3e84-421d-9fec-cab2d6c8fc91",
     videoUrl:
-      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756505275/hostel_pmbxy8.mov",
+      "https://res.cloudinary.com/dgslbycvk/video/upload/v1756992738/Hostel_wp5ooq.mov",
   },
 ];
 

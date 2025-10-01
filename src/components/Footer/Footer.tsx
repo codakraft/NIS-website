@@ -129,12 +129,15 @@ const Footer: React.FC = () => {
             }}
           />
           <div className={styles.footerLinks}>
-            <Link to="/admission/primary-school" className={styles.footerLink}>
-              Primary School
+            <Link to="#" className={styles.footerLink}>
+              Early Years Foundation School (EYFS)
             </Link>
-            <p className={styles.footerLink}>Junior School</p>
-            <p className={styles.footerLink}>High School</p>
-            <p className={styles.footerLink}>Sixth-Form</p>
+            <Link to="/admission/primary-school" className={styles.footerLink}>
+              Primary School (Key Stage 1-2)
+            </Link>
+            <p className={styles.footerLink}>Secondary (Key Stage 2 and 4)</p>
+            <p className={styles.footerLink}>⁠⁠Lower/Upper Six (Key Stage 5)</p>
+            {/* <p className={styles.footerLink}>Sixth-Form</p> */}
           </div>
         </div>
 

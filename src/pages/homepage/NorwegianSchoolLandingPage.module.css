@@ -547,6 +547,282 @@
   }
 }
 
+/* Head of School Section */
+.headOfSchoolSection {
+  padding: 100px 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.headOfSchoolSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(57, 62, 142, 0.02) 0%, rgba(220, 44, 44, 0.02) 100%);
+  z-index: 0;
+}
+
+.headOfSchoolContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.headOfSchoolContent {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 60px;
+  align-items: start;
+}
+
+.headOfSchoolImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.headOfSchoolImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(57, 62, 142, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.headOfSchoolImageContainer:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 80px rgba(57, 62, 142, 0.25);
+}
+
+.headOfSchoolImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.headOfSchoolImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(57, 62, 142, 0.95) 0%, rgba(57, 62, 142, 0.7) 50%, transparent 100%);
+  padding: 30px 25px 20px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.headOfSchoolTag {
+  display: inline-block;
+  background: rgba(220, 44, 44, 0.9);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.headOfSchoolMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.headOfSchoolHeader {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.headOfSchoolTitle {
+  font-size: 42px;
+  font-weight: 700;
+  color: #393e8e;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.5px;
+}
+
+.headOfSchoolDecoration {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2c2c 0%, #393e8e 100%);
+  border-radius: 2px;
+}
+
+.headOfSchoolText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #2c3e50;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.headOfSchoolText p {
+  margin: 0;
+  text-align: justify;
+}
+
+.headOfSchoolText p:first-child::first-letter {
+  font-size: 64px;
+  font-weight: 700;
+  color: #393e8e;
+  float: left;
+  line-height: 0.9;
+  margin: 8px 12px 0 0;
+}
+
+.headOfSchoolSignature {
+  margin-top: 20px;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #393e8e 0%, #4a4fa8 100%);
+  border-radius: 12px;
+  border-left: 5px solid #dc2c2c;
+  box-shadow: 0 8px 24px rgba(57, 62, 142, 0.2);
+}
+
+.signatureName {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 5px 0;
+  letter-spacing: 0.5px;
+}
+
+.signatureTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design for Head of School Section */
+@media (max-width: 1200px) {
+  .headOfSchoolContent {
+    gap: 40px;
+  }
+  
+  .headOfSchoolTitle {
+    font-size: 36px;
+  }
+  
+  .headOfSchoolText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .headOfSchoolSection {
+    padding: 60px 0;
+  }
+  
+  .headOfSchoolContainer {
+    padding: 0 20px;
+  }
+  
+  .headOfSchoolContent {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .headOfSchoolImageWrapper {
+    padding-top: 0;
+  }
+  
+  .headOfSchoolImageContainer {
+    max-width: 100%;
+  }
+  
+  .headOfSchoolTitle {
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .headOfSchoolDecoration {
+    margin: 0 auto;
+  }
+  
+  .headOfSchoolText {
+    font-size: 15px;
+  }
+  
+  .headOfSchoolText p {
+    text-align: left;
+  }
+  
+  .signatureName {
+    font-size: 22px;
+  }
+  
+  .signatureTitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headOfSchoolSection {
+    padding: 50px 0;
+  }
+  
+  .headOfSchoolContainer {
+    padding: 0 15px;
+  }
+  
+  .headOfSchoolContent {
+    gap: 40px;
+  }
+  
+  .headOfSchoolTitle {
+    font-size: 28px;
+  }
+  
+  .headOfSchoolText {
+    font-size: 14px;
+    gap: 18px;
+  }
+  
+  .headOfSchoolText p:first-child::first-letter {
+    font-size: 48px;
+    margin: 5px 8px 0 0;
+  }
+  
+  .headOfSchoolSignature {
+    padding: 20px 20px;
+  }
+  
+  .signatureName {
+    font-size: 20px;
+  }
+  
+  .signatureTitle {
+    font-size: 13px;
+  }
+  
+  .headOfSchoolImageOverlay {
+    padding: 20px 20px 15px;
+  }
+  
+  .headOfSchoolTag {
+    font-size: 10px;
+    padding: 6px 16px;
+  }
+}
+
 /* Statistics Section */
 .statisticsSection {
   padding: 80px 0;
@@ -1525,8 +1801,9 @@
 .carousel {
   display: flex;
   align-items: center;
-  animation: scrollRight 30s linear infinite;
-  gap: 60px;
+  animation: scrollRight 40s linear infinite;
+  gap: 30px;
+  width: calc(200% + 60px); /* Account for the duplicated set */
 }
 
 .logoItem {
@@ -1539,9 +1816,10 @@
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 220px;
-  height: 150px;
-  width: 400px;
+  min-width: 180px;
+  max-width: 200px;
+  height: 120px;
+  width: 100%;
 }
 
 .logoContent {
@@ -1555,13 +1833,13 @@
 
 .logoImage {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .universityName {
@@ -1616,25 +1894,25 @@
   }
   
   .carousel {
-    gap: 20px;
-    animation-duration: 25s;
-    padding: 0 10px;
+    gap: 12px;
+    animation-duration: 45s;
+    padding: 0 8px;
   }
   
   .logoItem {
-    min-width: 80vw;
-    width: 80vw;
-    height: 120px;
-    padding: 20px;
-    margin: 0 auto;
+    min-width: 100px;
+    max-width: 110px;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
   }
   
   .logoImage {
-    max-width: 90%;
-    max-height: 80px;
+    max-width: 85%;
+    max-height: 45px;
     width: auto;
     height: auto;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   
   .universityName {
@@ -1656,24 +1934,25 @@
   }
   
   .carousel {
-    gap: 15px;
-    animation-duration: 20s;
+    gap: 10px;
+    animation-duration: 50s;
     padding: 0 5px;
   }
   
   .logoItem {
-    min-width: 85vw;
-    width: 85vw;
-    height: 100px;
-    padding: 15px;
+    min-width: 85px;
+    max-width: 95px;
+    width: 100%;
+    height: 70px;
+    padding: 8px;
   }
   
   .logoImage {
-    max-width: 95%;
-    max-height: 70px;
+    max-width: 90%;
+    max-height: 40px;
     width: auto;
     height: auto;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
   }
   
   .universityName {
