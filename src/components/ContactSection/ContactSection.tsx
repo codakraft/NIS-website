@@ -105,7 +105,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
         if (!values.message.trim()) e.message = "Please enter a message";
         return e;
       },
-    []
+    [],
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -287,9 +287,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ onSubmit }) => {
             {/* <MailIcon className={styles.icon} /> */}
             <EmailIconComponent className={styles.icon} />
             <div>
-              <div>admissions@nis-edu.com</div>
-              <div>schooladmin@nising.com</div>
-              <div>careers@nis-edu.com</div>
+              <div>admissions@norwegianinternationalschools.com</div>
+              <div>schooladmin@norwegianinternationalschools.com</div>
+              <div>careers@norwegianinternationalschools.com</div>
             </div>
           </div>
 

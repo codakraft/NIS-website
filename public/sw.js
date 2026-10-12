@@ -5,13 +5,6 @@ const urlsToCache = [
   '/static/js/bundle.js',
   '/static/css/main.css',
   '/manifest.json',
-  // Add university logos for caching
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/stanford-1024x449-1.png',
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/oxford.png',
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/ohio.png',
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/mit-1024x672-1.jpg',
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/havard.png',
-  'https://norwegianinternationalschools.com/wp-content/uploads/2024/06/UniversityOfCambridgeLogo-1.png',
 ];
 
 // Install event - cache resources

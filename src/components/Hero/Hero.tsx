@@ -111,7 +111,7 @@ const HeroSection: React.FC<NorwegianSchoolHeaderProps> = ({
               onLoadedData={handleVideoLoad}
               onError={handleVideoError}
               preload="metadata"
-              poster="https://res.cloudinary.com/dgslbycvk/image/upload/v1756418814/0822_poster.jpg"
+              poster="https://res.cloudinary.com/dgslbycvk/video/upload/so_0,f_jpg,q_auto,w_1920/v1756575122/HomePageW_OLogo_qh4fbf.jpg"
             >
               <source
                 src="https://res.cloudinary.com/dgslbycvk/video/upload/v1756575122/HomePageW_OLogo_qh4fbf.mov"

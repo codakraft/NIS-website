@@ -52,11 +52,11 @@ const Footer: React.FC = () => {
             }}
           />
           <div className={styles.footerEmails}>
-            <p>schooladmin@norwegianinternationalschools.com</p>
             <p>admissions@norwegianinternationalschools.com</p>
+            <p>schooladmin@norwegianinternationalschools.com</p>
             <p>careers@norwegianinternationalschools.com</p>
-            <p>Virtual Classroom</p>
-            <p>Peer Learning</p>
+            {/* <p>Virtual Classroom</p>
+            <p>Peer Learning</p> */}
           </div>
         </div>
 
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
               onClick={() =>
                 window.open(
                   "https://www.youtube.com/watch?v=nc2kiHuoQxc&feature=youtu.be",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
               onClick={() =>
                 window.open(
                   "https://www.instagram.com/norwegianinternationalschool/",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
           />
           <div className={styles.affiliationsContainer}>
             <img
-              src="https://norwegianinternationalschools.com/wp-content/uploads/2024/06/affiliations-new-Main.png"
+              src={`${process.env.PUBLIC_URL}/assets/affiliations.png`}
               alt="School Affiliations"
               className={styles.affiliationsImage}
               width="497"

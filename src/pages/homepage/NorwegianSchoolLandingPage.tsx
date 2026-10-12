@@ -23,27 +23,27 @@ import {
 const universityLogos = [
   {
     name: "Stanford University",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/stanford-1024x449-1.png",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/stanford.png`,
   },
   {
     name: "University of Oxford",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/oxford.png",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/oxford.png`,
   },
   {
     name: "Ohio University",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/ohio.png",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/ohio.png`,
   },
   {
     name: "Massachusetts Institute of Technology",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/mit-1024x672-1.jpg",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/mit.jpg`,
   },
   {
     name: "Harvard University",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/havard.png",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/harvard.png`,
   },
   {
     name: "University of Cambridge",
-    logo: "https://norwegianinternationalschools.com/wp-content/uploads/2024/06/UniversityOfCambridgeLogo-1.png",
+    logo: `${process.env.PUBLIC_URL}/assets/universities/cambridge.png`,
   },
   {
     name: "Columbia University",
@@ -63,7 +63,7 @@ const universityLogos = [
 const useCountUp = (
   end: number,
   duration: number = 2000,
-  isVisible: boolean = false
+  isVisible: boolean = false,
 ) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -99,7 +99,7 @@ const useIntersectionObserver = (options: IntersectionObserverInit = {}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsIntersecting(entry.isIntersecting),
-      { threshold: 0.3, ...options }
+      { threshold: 0.3, ...options },
     );
 
     if (targetRef.current) observer.observe(targetRef.current);
@@ -179,7 +179,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
       count2: useCountUp(100, 2000, isIntersecting),
       count3: useCountUp(100, 1800, isIntersecting),
     },
-    [isIntersecting]
+    [isIntersecting],
   );
 
   // State for testimonials
@@ -191,7 +191,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
   // Function to go to next testimonial
   const goToNextTestimonial = () => {
     setCurrentTestimonial((prev) =>
-      prev === testimonialsData.length - 1 ? 0 : prev + 1
+      prev === testimonialsData.length - 1 ? 0 : prev + 1,
     );
   };
 
@@ -239,7 +239,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
         goToNextTestimonial();
       } else if (isRightSwipe) {
         setCurrentTestimonial((prev) =>
-          prev === 0 ? testimonialsData.length - 1 : prev - 1
+          prev === 0 ? testimonialsData.length - 1 : prev - 1,
         );
       }
     }
@@ -259,7 +259,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
           {/* Purple Card Overlay */}
           <div className={styles.aboutCardOverlay}>
             <div className={styles.sectionTag}>ABOUT NIS</div>
-            <h2 className={styles.aboutTitle}>What Sets Us Apart</h2>
+            <h2 className={styles.aboutTitle}>Whatssss Sets Us Apart</h2>
           </div>
           {/* Images and Text Row */}
           <div className={styles.aboutRow}>
@@ -267,7 +267,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
             <div className={styles.aboutImageLeft}>
               {/* <TeacherStudent2Icon style={{ width: "100%", height: "100%" }} /> */}
               <LazyImage
-                src="https://res.cloudinary.com/dgslbycvk/image/upload/v1755427340/Rectangle_lz3ppx.png"
+                src="https://res.cloudinary.com/dgslbycvk/image/upload/f_auto,q_auto,w_700/v1755427340/Rectangle_lz3ppx.png"
                 alt="About NIS - School building"
                 style={{ width: "100%", height: "100%" }}
               />
@@ -419,7 +419,7 @@ const NorwegianSchoolLandingPage: React.FC<NorwegianSchoolHeaderProps> = ({
 
               <div className={styles.headOfSchoolSignature}>
                 <p className={styles.signatureName}>David Roantree</p>
-                <p className={styles.signatureTitle}>Acting Head of School</p>
+                <p className={styles.signatureTitle}>Head of School</p>
               </div>
             </div>
           </div>
